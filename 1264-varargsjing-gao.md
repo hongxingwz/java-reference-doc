@@ -32,7 +32,21 @@ public static <T> void addAll(Collection<T> coll, T... ts)
 
 现在就可以提供泛型类型来调用这个方法了。对于只需要读取参数数组元素的所有方法，都可以使用这个标注，这仅限于最常见的用例。
 
-
+> 注释：可以使用@SafeVarargs标注来消除创建泛型数组的有关限制，方法如下：
+>
+> @SafeVarargs static &lt;E&gt; E\[\] array\(E... array\){return array;}
+>
+> 现在可以调用：
+>
+> Pair&lt;String&gt;\[\] table = array\(pair1, pair2\);
+>
+> 这看起来很方便，不过隐藏着危险。以下代码：
+>
+> Object\[\] objarray = table;
+>
+> objarray\[0\] = new Pair&lt;Employee&gt;\(\);
+>
+> 能顺利运行而不会出现ArrayStoreException异常（因为数组存储只会检查擦除的类型），但是在处理table\[0\]时你会在别处得到一个异常
 
 
 
