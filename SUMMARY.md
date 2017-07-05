@@ -9,4 +9,6 @@
 * [12.5.2 翻译泛型方法](1252.md)
 * [12.6 约束与局限性](126-yue-shu-yu-ju-xian-xing.md)
 * [12.6.1不能用基本类型实例化类型参数](1261bu-neng-yong-ji-ben-lei-xing-shi-li-hua-lei-xing-can-shu.md)
+* [12.6.2 运行时类型查询只适用于原始类型](1262-yun-xing-shi-lei-xing-cha-xun-zhi-shi-yong-yu-yuan-shi-lei-xing.md)
+* [12.6.3 不能创建参数化类型的数组](1263-bu-neng-chuang-jian-can-shu-hua-lei-xing-de-shu-zu.md)
 
