@@ -7,24 +7,30 @@
 
 例如，Pair&lt;T&gt;的原始类型如下所示：
 
-    public class Pair{
-        private Object first;
-        private Object second;
-        
-        public Pair(Object first, Object second){
-            this.first = first;
-            this.second = second;
-        }
-        
-        public Object getFirst(){
-            return first;
-        }
-        
-        public Object getSecond(){
-            return second;
-        }
-        
-        public void setFirst(Object newValue){first = newValue;}
-        public void setSecond(Object newValue){second = newValue;}
+```
+public class Pair{
+    private Object first;
+    private Object second;
+
+    public Pair(Object first, Object second){
+        this.first = first;
+        this.second = second;
     }
+
+    public Object getFirst(){
+        return first;
+    }
+
+    public Object getSecond(){
+        return second;
+    }
+
+    public void setFirst(Object newValue){first = newValue;}
+    public void setSecond(Object newValue){second = newValue;}
+}
+```
+
+因为T是一个无限定的变量，所以直接用Object替换。  
+结果就是一个普通的类，就好像泛型引入Java语言这前已经实现的那样。  
+在程序中可以包含不同类型的Pair,例如，Pair&lt;String&gt; 
 
