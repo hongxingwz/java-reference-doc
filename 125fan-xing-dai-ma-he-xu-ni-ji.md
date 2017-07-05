@@ -7,7 +7,7 @@
 
 例如，Pair&lt;T&gt;的原始类型如下所示：
 
-```
+```java
 public class Pair{
     private Object first;
     private Object second;
@@ -32,5 +32,40 @@ public class Pair{
 
 因为T是一个无限定的变量，所以直接用Object替换。  
 结果就是一个普通的类，就好像泛型引入Java语言这前已经实现的那样。  
-在程序中可以包含不同类型的Pair,例如，Pair&lt;String&gt;, Pair&lt;GregorianCalender&gt;
+在程序中可以包含不同类型的Pair,例如，Pair&lt;String&gt;, Pair&lt;GregorianCalender&gt;。而探险类型后就变成原始的Pair类型了。
+
+原始类型用第一个限定的类型变量来替换，如果没有给定限定就用Ojbect替换。例如，类Pair&lt;T&gt;中的类型变量没有显式的限定，因此，原始类型用Object替换T。假定声明了一个不同的类型。
+
+```java
+public class Interval<T extends Comparable&Serializable> implements Serializable{
+    private T lower;
+    private T upper;
+
+    ...
+
+    public Interval(T first, T second){
+        if(first.compareTo(second) <= 0){
+            lower = first;
+            upper = second;
+        }else{
+            lower = second;
+            upper = first;
+        }
+    }
+}
+```
+
+原始类型Interval如下所示：
+
+```java
+public class Interval implements Serializable{
+    private Comparable lower;
+    private Comparable upper;
+    
+    ...
+    public Interval(Comparable first, Comparable second){...}
+}
+```
+
+
 

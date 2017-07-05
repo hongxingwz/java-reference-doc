@@ -5,4 +5,5 @@
 * [12.3泛型方法](123fan-xing-fang-fa.md)
 * [12.4类型变量的限定](124lei-xing-bian-liang-de-xian-ding.md)
 * [12.5泛型代码和虚拟机](125fan-xing-dai-ma-he-xu-ni-ji.md)
+* [12.5.1 翻译泛型表达式](1251-fan-yi-fan-xing-biao-da-shi.md)
 
