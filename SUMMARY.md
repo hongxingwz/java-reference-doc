@@ -8,4 +8,5 @@
 * [12.5.1 翻译泛型表达式](1251-fan-yi-fan-xing-biao-da-shi.md)
 * [12.5.2 翻译泛型方法](1252.md)
 * [12.6 约束与局限性](126-yue-shu-yu-ju-xian-xing.md)
+* [12.6.1不能用基本类型实例化类型参数](1261bu-neng-yong-ji-ben-lei-xing-shi-li-hua-lei-xing-can-shu.md)
 
