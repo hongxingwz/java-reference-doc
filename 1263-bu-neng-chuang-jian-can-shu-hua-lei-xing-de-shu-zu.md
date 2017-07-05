@@ -30,6 +30,8 @@ objarray[0] = new Pair<Employee>();
 Pair<String>[] table = (Pair<String>[])new Pair<?>[10];
 ```
 
+结果将是不安全的。如果在table\[0\]中存储一个Pair&lt;Employee&gt;，然后对table\[0\].getFirst\(\)调用一个String方法，会得到一个ClassCastException异常
+
 ## 自己的实验
 
 **泛型数组**
