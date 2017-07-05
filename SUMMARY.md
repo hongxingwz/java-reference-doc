@@ -14,4 +14,6 @@
 * [12.6.4 Varargs警告](1264-varargsjing-gao.md)
 * [12.6.5 不能实例化类型变量](1265-bu-neng-shi-li-hua-lei-xing-bian-liang.md)
 * [12.6.6 泛型类的静态上下文中类型变量无效](1266-fan-xing-lei-de-jing-tai-shang-xia-wen-zhong-lei-xing-bian-liang-wu-xiao.md)
+* [12.6.7 不能抛出或捕获泛型类的实例](1267-bu-neng-pao-chu-huo-bu-huo-fan-xing-lei-de-shi-li.md)
+* [12.7泛型类型的继承规则](127fan-xing-lei-xing-de-ji-cheng-gui-ze.md)
 
