@@ -16,4 +16,7 @@
 * [12.6.6 泛型类的静态上下文中类型变量无效](1266-fan-xing-lei-de-jing-tai-shang-xia-wen-zhong-lei-xing-bian-liang-wu-xiao.md)
 * [12.6.7 不能抛出或捕获泛型类的实例](1267-bu-neng-pao-chu-huo-bu-huo-fan-xing-lei-de-shi-li.md)
 * [12.7泛型类型的继承规则](127fan-xing-lei-xing-de-ji-cheng-gui-ze.md)
+* [12.8 通配符类型](128-tong-pei-fu-lei-xing.md)
+* [12.8.1 通配符的超类型限定](1281-tong-pei-fu-de-chao-lei-xing-xian-ding.md)
+* [12.8.2 无限定通配符](1282-wu-xian-ding-tong-pei-fu.md)
 
