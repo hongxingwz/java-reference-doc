@@ -6,4 +6,5 @@
 * [12.4类型变量的限定](124lei-xing-bian-liang-de-xian-ding.md)
 * [12.5泛型代码和虚拟机](125fan-xing-dai-ma-he-xu-ni-ji.md)
 * [12.5.1 翻译泛型表达式](1251-fan-yi-fan-xing-biao-da-shi.md)
+* [＊12.5.2 翻译泛型方法](1252.md)
 
