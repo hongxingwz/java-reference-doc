@@ -12,4 +12,6 @@
 * [12.6.2 运行时类型查询只适用于原始类型](1262-yun-xing-shi-lei-xing-cha-xun-zhi-shi-yong-yu-yuan-shi-lei-xing.md)
 * [12.6.3 不能创建参数化类型的数组](1263-bu-neng-chuang-jian-can-shu-hua-lei-xing-de-shu-zu.md)
 * [12.6.4 Varargs警告](1264-varargsjing-gao.md)
+* [12.6.5 不能实例化类型变量](1265-bu-neng-shi-li-hua-lei-xing-bian-liang.md)
+* [12.6.6 泛型类的静态上下文中类型变量无效](1266-fan-xing-lei-de-jing-tai-shang-xia-wen-zhong-lei-xing-bian-liang-wu-xiao.md)
 
