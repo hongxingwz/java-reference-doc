@@ -25,4 +25,5 @@
 * [14.2 Class对象](142-classdui-xiang.md)
 * [14.2.1 类字面常量](1421-lei-zi-mian-chang-liang.md)
 * [14.2.2 泛化的Class引用](1422-fan-hua-de-class-yin-yong.md)
+* [14.2.3 新的转型语法](1423-xin-de-zhuan-xing-yu-fa.md)
 
