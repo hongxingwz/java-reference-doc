@@ -26,7 +26,16 @@ Class<Number> genericNumberClass = int.class
 
 这看起来似乎是起作用的，因为Integer继承自Number。但是它无法工作，因为Integer Class对象不是Number Class对象的子类（这种差异看起来可能有些诡异）
 
+为了在使用泛化的Class引用时放松限制，我使用了通配符，它是Java泛型的一部分。通配符就是"?"，表示“任何事物“。因此，我们可以在上例的普通Class引用中添加通配符，并产生相同的结果：
 
+```
+public class WildcardClassReferences{
+    public static void main(String[] args){
+        Class<?> intClass = int.class;
+        intClass = double.class;
+    }
+}
+```
 
-为了在使用泛化的Class引用时放松限制，我使用了通配符，它是Java泛型的一部分。通配符就是"?"，表示“任何事物“。因此，我们可以在上例的普通Class引用中添加通配符，并
+在Java SE 5中， Class&lt;?&gt;优于平凡的Class，即便它们是等价的，并且平凡的Class如你所见，不会产生编译器警告信息。Class&lt;?&gt;的好处是它表示你并非是碰巧或者由于疏忽，而使用了一个非具体的类引用，你就是选择了非具体的版本。
 
