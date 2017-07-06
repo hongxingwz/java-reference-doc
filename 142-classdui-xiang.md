@@ -60,8 +60,6 @@ Loading Cookie
 
 这里的每个类Candy, Gum, Cookie, 都有一个**static**子句，该子句在类第一次被加载时执行。这时会有相应的信息打印出来，告诉我们这个类什么时候被加载了。在**main\(\)**中，创建对象的代码被置于打印语句之间，以帮助我们判断加载的时间点。
 
-
-
 从输出中可以看到，Class对象仅在需要的时候才被加载，static初始化是在类加载时进行的。特别有趣的一行是：
 
 ```
@@ -72,9 +70,80 @@ Class.forName("Gum");
 
 在前面的例子里，如果**Class.forName\(\)**找不到你要加载的类，它会抛出异常**ClassNotFoundException**。这里我们只需简单报告问题，但在更严密的程序里，可能要在异常处理程序中解决这个问题。
 
-
-
 无论何里，只要你想在运行时使用类型信息，就必须首先获得恰当的**Class**对象的引用。**Class.forName\(\)**就是实现此功能的便捷途径，因为你不需要为了获得**Class**引用而持有该类型对象。但是，如果你已经拥有了一个感兴趣的类型的对象，那就可以通过调用**getClass\(\)**方法来获取**Class**引用了，这个方法属于根类**Object**的一部分，它将返回表示该对象的实际类型的**Class**引用。**Class**包含很多有用的方法，下面是其中的一部分:
+
+```java
+interface HashBatteries{}
+interface Waterproof{}
+interface Shoots{}
+
+class Toy{
+    Toy(){
+
+    }
+    Toy(int i){
+
+    }
+}
+
+class FancyToy extends Toy
+        implements HashBatteries, Waterproof, Shoots{
+    FancyToy() {
+        super(1);
+    }
+}
+public class ToyTest {
+    static void printInfo(Class cc) {
+        System.out.println("Class name: " + cc.getName() +
+            " is interface? [" + cc.isInterface() + "]");
+        System.out.println("Simple name: " + cc.getSimpleName());
+        System.out.println("Canonical name: " + cc.getCanonicalName());
+
+        System.out.println("-------------------");
+    }
+
+    public static void main(String[] args) 
+            throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+        Class c = Class.forName("com.jianglei.typeinfo.FancyToy");
+        printInfo(c);
+
+        for (Class face : c.getInterfaces()) {
+            printInfo(face);
+        }
+
+        Class up = c.getSuperclass();
+
+        Object o = up.newInstance();
+        printInfo(o.getClass());
+
+    }
+}
+/*
+Class name: com.jianglei.typeinfo.FancyToy is interface? [false]
+Simple name: FancyToy
+Canonical name: com.jianglei.typeinfo.FancyToy
+-------------------
+Class name: com.jianglei.typeinfo.HashBatteries is interface? [true]
+Simple name: HashBatteries
+Canonical name: com.jianglei.typeinfo.HashBatteries
+-------------------
+Class name: com.jianglei.typeinfo.Waterproof is interface? [true]
+Simple name: Waterproof
+Canonical name: com.jianglei.typeinfo.Waterproof
+-------------------
+Class name: com.jianglei.typeinfo.Shoots is interface? [true]
+Simple name: Shoots
+Canonical name: com.jianglei.typeinfo.Shoots
+-------------------
+Class name: com.jianglei.typeinfo.Toy is interface? [false]
+Simple name: Toy
+Canonical name: com.jianglei.typeinfo.Toy
+-------------------
+```
+
+FancyToy继承自Toy并实现了HasBatteries,  Waterproff 和 Shoots接口。在main\(\)中，用forName\(\)方法在适当的try语句块中，创建了一个Class引用，并将其初始化为指向FancyToy Class。注意，在传递给forName\(\)的字符串中，你必须使用全限定名（包含包名）。
+
+
 
 
 
