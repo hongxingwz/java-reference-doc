@@ -58,15 +58,15 @@ After Class.forName("com.jianglei.typeinfo.Gum ")
 Loading Cookie
 ```
 
-这里的每个类Candy, Gum, Cookie, 都有一个**static**子句，该子句在类第一次被加载时执行。这时会有相应的信息打印出来，告诉我们这个类什么时候被加载了。在**main\(\)**中，创建对象的代码被置于打印语句之间，以帮助我们判断加载的时间点。
+这里的每个类**Candy, Gum, Cookie**, 都有一个**static**子句，该子句在类第一次被加载时执行。这时会有相应的信息打印出来，告诉我们这个类什么时候被加载了。在**main\(\)**中，创建对象的代码被置于打印语句之间，以帮助我们判断加载的时间点。
 
-从输出中可以看到，Class对象仅在需要的时候才被加载，static初始化是在类加载时进行的。特别有趣的一行是：
+从输出中可以看到，Class对象仅在需要的时候才被加载，**static**初始化是在类加载时进行的。特别有趣的一行是：
 
 ```
 Class.forName("Gum");
 ```
 
-这个方法是Class类（所有Class对象都属于这个类）的一个**static**成员。Class对象就和其他对象一样，我们可以获取并操作它的引用（这也就是类加载器的工作）。**forName\(\)**是取得Class对象引用的一种方法。它是用一个包含目标类的文本名的**String**作为输入参数，返回的是一个**Class**对象的引用，上面的代码忽略了返回值。对**forName\(\)**的调用是为了它产生的“副作用”：如果类**Gum**还没有被加载就加载它。在加载过程中，**Gum**的**static**子句被执行。
+这个方法是**Class**类（所有**Class**对象都属于这个类）的一个**static**成员。**Class**对象就和其他对象一样，我们可以获取并操作它的引用（这也就是类加载器的工作）。**forName\(\)**是取得**Class**对象引用的一种方法。它是用一个包含目标类的文本名的**String**作为输入参数，返回的是一个**Class**对象的引用，上面的代码忽略了返回值。对**forName\(\)**的调用是为了它产生的“副作用”：如果类**Gum**还没有被加载就加载它。在加载过程中，**Gum**的**static**子句被执行。
 
 在前面的例子里，如果**Class.forName\(\)**找不到你要加载的类，它会抛出异常**ClassNotFoundException**。这里我们只需简单报告问题，但在更严密的程序里，可能要在异常处理程序中解决这个问题。
 
@@ -141,9 +141,15 @@ Canonical name: com.jianglei.typeinfo.Toy
 -------------------
 ```
 
-FancyToy继承自Toy并实现了HasBatteries,  Waterproff 和 Shoots接口。在main\(\)中，用forName\(\)方法在适当的try语句块中，创建了一个Class引用，并将其初始化为指向FancyToy Class。注意，在传递给forName\(\)的字符串中，你必须使用全限定名（包含包名）。
+**FancyToy**继承自**Toy**并实现了**HasBatteries**,  **Waterproff** 和 **Shoots**接口。在**main\(\)**中，用forName\(\)方法在适当的try语句块中，创建了一个Class引用，并将其初始化为指向FancyToy Class。注意，在传递给forName\(\)的字符串中，你必须使用全限定名（包含包名）。
 
+printInfo\(\)使用getName\(\)来产生全限定的类名，并分别使用getSimpleName\(\)和getCanonicalName\(\)来产生不包含名的类名和全限定的类名。isInterface\(\)方法如同其名，可以告诉你这个Class对象是否表示某个接口。因此，通过Class对象，你可以发现你想要的类型的所有信息。
 
+在main\(\)调用的Class.getInterfaces\(\)方法返回的是Class对象，它们表示在感兴趣的Class对象中所包含的接口。
+
+如果你有一个Class对象，还可以使用getSuperclass\(\)方法查询其直接基类，这将返回你可以用来进一步查询的Class对象。因此，你可以在运行时发现一个对象完整的类继承结构。
+
+Class的newInstance\(\)方法是实现“虚拟构造器”的一种徐径，虚拟构造器允许你声明：“我不知道你的确切类型，但是无论如何要正确地创建你自己。”在前面的示例中，会得到Object引用，但是这个引用指向的是Toy对象。当然，在你可以发送Object能够接受的消息之外的任何消息之前，你必须更多地了解它，并执行某种转型。另外，使用newInstance\(\)来创建的类，必须带有默认的构造器。在本章稍后部分，你将会看到如何通过使用Java的反射API，用任意的构造器来动态地创建类的对象。
 
 
 
