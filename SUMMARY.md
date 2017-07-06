@@ -26,4 +26,6 @@
 * [14.2.1 类字面常量](1421-lei-zi-mian-chang-liang.md)
 * [14.2.2 泛化的Class引用](1422-fan-hua-de-class-yin-yong.md)
 * [14.2.3 新的转型语法](1423-xin-de-zhuan-xing-yu-fa.md)
+* [14.3 类型转换前先做检查](143-lei-xing-zhuan-huan-qian-xian-zuo-jian-cha.md)
+* [14.6 反射：运行时的类信息](146-fan-she-ff1a-yun-xing-shi-de-lei-xin-xi.md)
 
