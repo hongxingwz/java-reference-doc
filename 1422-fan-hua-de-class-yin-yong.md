@@ -14,7 +14,6 @@ public class GenericClassReferences{
         // genericIntClass = double.class;
     }
 }
-    
 ```
 
 普通的类引用不会产生警告信息，你可以看到，尽管泛型类引用只能赋值为指向其声明的类型，但是普通的类引用可以被重新赋值为指向任何其他的Class对象。通过使用泛型语法，可以让编译器强制执行额外的类型检查。
@@ -26,4 +25,6 @@ Class<Number> genericNumberClass = int.class
 ```
 
 这看起来似乎是起作用的，因为Integer继承自Number。但是它无法工作，因为Integer Class对象不是Number Class对象的子类（这种差异看起来可能有些诡异）
+
+
 
