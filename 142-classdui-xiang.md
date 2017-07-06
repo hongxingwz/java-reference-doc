@@ -141,15 +141,13 @@ Canonical name: com.jianglei.typeinfo.Toy
 -------------------
 ```
 
-**FancyToy**继承自**Toy**并实现了**HasBatteries**,  **Waterproff** 和 **Shoots**接口。在**main\(\)**中，用forName\(\)方法在适当的try语句块中，创建了一个Class引用，并将其初始化为指向FancyToy Class。注意，在传递给forName\(\)的字符串中，你必须使用全限定名（包含包名）。
+**FancyToy**继承自**Toy**并实现了**HasBatteries**,  **Waterproff** 和 **Shoots**接口。在**main\(\)**中，用**forName\(\)**方法在适当的try语句块中，创建了一个**Class**引用，并将其初始化为指向**FancyToy Class**。注意，在传递给**forName\(\)**的字符串中，你必须使用全限定名（包含包名）。
 
-printInfo\(\)使用getName\(\)来产生全限定的类名，并分别使用getSimpleName\(\)和getCanonicalName\(\)来产生不包含名的类名和全限定的类名。isInterface\(\)方法如同其名，可以告诉你这个Class对象是否表示某个接口。因此，通过Class对象，你可以发现你想要的类型的所有信息。
+**printInfo\(\)**使用**getName\(\)**来产生全限定的类名，并分别使用**getSimpleName\(\)**和**getCanonicalName\(\)**来产生不包含名的类名和全限定的类名。**isInterface\(\)**方法如同其名，可以告诉你这个**Class**对象是否表示某个接口。因此，通过**Class**对象，你可以发现你想要的类型的所有信息。
 
-在main\(\)调用的Class.getInterfaces\(\)方法返回的是Class对象，它们表示在感兴趣的Class对象中所包含的接口。
+在**main\(\)**调用的**Class.getInterfaces\(\)**方法返回的是**Class**对象，它们表示在感兴趣的**Class**对象中所包含的接口。
 
-如果你有一个Class对象，还可以使用getSuperclass\(\)方法查询其直接基类，这将返回你可以用来进一步查询的Class对象。因此，你可以在运行时发现一个对象完整的类继承结构。
+如果你有一个**Class**对象，还可以使用**getSuperclass\(\)**方法查询其直接基类，这将返回你可以用来进一步查询的**Class**对象。因此，你可以在运行时发现一个对象完整的类继承结构。
 
-Class的newInstance\(\)方法是实现“虚拟构造器”的一种徐径，虚拟构造器允许你声明：“我不知道你的确切类型，但是无论如何要正确地创建你自己。”在前面的示例中，会得到Object引用，但是这个引用指向的是Toy对象。当然，在你可以发送Object能够接受的消息之外的任何消息之前，你必须更多地了解它，并执行某种转型。另外，使用newInstance\(\)来创建的类，必须带有默认的构造器。在本章稍后部分，你将会看到如何通过使用Java的反射API，用任意的构造器来动态地创建类的对象。
-
-
+**Class**的**newInstance\(\)**方法是实现“虚拟构造器”的一种徐径，虚拟构造器允许你声明：“我不知道你的确切类型，但是无论如何要正确地创建你自己。”在前面的示例中，会得到**Object**引用，但是这个引用指向的是Toy对象。当然，在你可以发送**Object**能够接受的消息之外的任何消息之前，你必须更多地了解它，并执行某种转型。另外，使用**newInstance\(\)**来创建的类，必须带有默认的构造器。在本章稍后部分，你将会看到如何通过使用Java的反射API，用任意的构造器来动态地创建类的对象。
 
