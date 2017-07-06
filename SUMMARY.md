@@ -22,4 +22,5 @@
   * [12.8.2 无限定通配符](1282-wu-xian-ding-tong-pei-fu.md)
 * [14 类型信息](lei-xing-xin-xi.md)
 * [14.1 为什么需要RTTI](141-wei-shi-yao-xu-yao-rtti.md)
+* [14.2 Class对象](142-classdui-xiang.md)
 
