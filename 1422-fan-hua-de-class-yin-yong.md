@@ -28,3 +28,5 @@ Class<Number> genericNumberClass = int.class
 
 
 
+为了在使用泛化的Class引用时放松限制，我使用了通配符，它是Java泛型的一部分。通配符就是"?"，表示“任何事物“。因此，我们可以在上例的普通Class引用中添加通配符，并
+
