@@ -30,4 +30,5 @@
 * [14.6 反射：运行时的类信息](146-fan-she-ff1a-yun-xing-shi-de-lei-xin-xi.md)
 * [1 反射](fan-she.md)
 * [1.1获取Class实例的三种形式](11huo-qu-fan-she-lei-de-san-zhong-xing-shi.md)
+* [1.2](12.md)
 
