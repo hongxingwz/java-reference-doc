@@ -30,3 +30,10 @@ public class Annotations{}
 
 最终通过反射得到的都是下面的结果
 
+```
+@com.jianglei.repeatable.Roles(
+value=[@com.jianglei.repeatable.Role(name=doctor), @com.jianglei.repeatable.Role(name=who)])
+```
+
+
+
