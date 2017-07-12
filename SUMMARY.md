@@ -36,4 +36,6 @@
 * [2.1.1 定义注解](211-ding-yi-zhu-jie.md)
 * [2.1.2 元注解](212.md)
 * [2.2 编写注解处理器](22-bian-xie-zhu-jie-chu-li-qi.md)
+* [2.2.1 注解元素](221-zhu-jie-yuan-su.md)
+* [2.2.2 默认值限制](222-mo-ren-zhi-xian-zhi.md)
 
