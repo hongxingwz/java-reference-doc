@@ -39,4 +39,5 @@
 * [2.2.1 注解元素](221-zhu-jie-yuan-su.md)
 * [2.2.2 默认值限制](222-mo-ren-zhi-xian-zhi.md)
 * [注解的继承](zhu-jie-de-ji-cheng.md)
+* [@Repeatable](repeatable.md)
 
