@@ -18,7 +18,7 @@ public class PasswordUtils{
     public boolean validatePassowrd(String password){
         return (password.matches("\\w*\\d\\w*");
     }
-    
+
     @UseCase(id = 48)
     public boolean encryptPassword(String password){
         return new StringBuilder(password).reverse().toString();
@@ -30,7 +30,6 @@ public class PasswordUtils{
     public boolean checkForNewPassword(String password){
         return false;
     }
-    
 ```
 
 编写注解处理器类
@@ -60,6 +59,10 @@ public class UserCaseTracker2 {
     }
 }
 ```
+
+> 注：cls.getDeclaredMethods\(\)获取该类声明的所有方法，不包括继承的
+>
+> method.getAnnotation\(UseCase.class\)如果存在该元素的指定类型的注解，则返回这此注解，否则返回null
 
 
 
