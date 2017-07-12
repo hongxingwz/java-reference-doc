@@ -41,4 +41,6 @@
 * [注解的继承](zhu-jie-de-ji-cheng.md)
 * [@Repeatable](repeatable.md)
 * [AnnotatedElement](annotatedelement.md)
+* [Type](type.md)
+* [Member](member.md)
 
