@@ -9,10 +9,7 @@ public interface GenericDeclaration extends AnnotatedElement{
     * 如果底层的一般声明未声明任何类型变量，则返回一个0长度的数组。
     **/
     public TypeVariable<?>[] getTypeParameters();
-    
 ```
-
-
 
 
 
