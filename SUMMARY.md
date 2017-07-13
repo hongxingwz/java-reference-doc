@@ -45,4 +45,6 @@
 * [Member](member.md)
 * [AccessibleObject](accessibleobject.md)
 * [Field](file.md)
+* [GenericDeclaration](genericdeclaration.md)
+* [TypeVariable](typevariable.md)
 
