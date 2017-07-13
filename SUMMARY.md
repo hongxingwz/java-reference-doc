@@ -48,4 +48,5 @@
 * [GenericDeclaration](genericdeclaration.md)
 * [TypeVariable](typevariable.md)
 * [Executable](executable.md)
+* [Objects](objects.md)
 
