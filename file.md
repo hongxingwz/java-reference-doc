@@ -183,5 +183,30 @@ public class ClassA<E> {
 }
 ```
 
+如果字段是Java的访问控制之后，且此字段是不可访问的，此方法会抛出一个IllgealAccessException
+
+```java
+public class ClassA<E> {
+    private String name = "dengyi";
+
+    public static int age = 28;
+
+    public List<E> list = new ArrayList<>();
+
+
+
+}
+class ClassATest{
+    public static void main(String[] args) throws
+            NoSuchFieldException, IllegalAccessException {
+        Class<ClassA> cls = ClassA.class;
+
+        Field name = cls.getDeclaredField("name");
+        name.set(new ClassA(), "jianglei"); //throw IllegalAccessException
+
+    }
+}
+```
+
 
 
