@@ -1,5 +1,7 @@
 # Field
 
+## UML图
+
 ![](/assets/snapshot37.png)
 
 ## 测试类
@@ -28,7 +30,7 @@ public class ClassA<E> {
 
 ---
 
-* get\(Object obj\)
+* **get\(Object obj\)**
 
 如果是基本类型 -&gt; 返回包装类型  
 如果此字段是static，那么参数obj会被忽略，所也obj可以是null
@@ -103,7 +105,7 @@ class ClassATest{
 ```java
 public class ClassA<E> {
     private String name = "dengyi";
-    
+
     //基本类型
     public static int age = 28;
 
@@ -120,9 +122,62 @@ public class ClassA<E> {
 
         Object o = age.get(classA);
         System.out.println(o instanceof Integer); //基本类型返回其包装类
-        
+
         Object o1 = list.get(classA);
         System.out.println(o1 instanceof List); //引用类型原样返回
+
+    }
+}
+```
+
+---
+
+* set\(Object obj, Object value\)
+
+这个方法的处理流程如下：
+
+如果字段是静态的，**obj**字段会被忽略，**obj**字段可以为null
+
+```java
+public class ClassA<E> {
+    private String name = "dengyi";
+
+    public static int age = 28;
+
+    public List<E> list = new ArrayList<>();
+
+
+    public static void main(String[] args) throws
+                        NoSuchFieldException, IllegalAccessException {
+        Class<ClassA> cls = ClassA.class;
+
+        Field age = cls.getField("age");
+        age.set(null, 18); //obj 参数可以为null
+        System.out.println(ClassA.age); //output: 18
+
+    }
+}
+```
+
+否则此字段是一个实例的字段，如指定的obj参数为null，则会抛出一个NullPointerException。如果指定的obj参数不是此class的实例，则会抛出一个IllegalArgumentException
+
+```java
+public class ClassA<E> {
+    private String name = "dengyi";
+
+    public static int age = 28;
+
+    public List<E> list = new ArrayList<>();
+
+
+    public static void main(String[] args) throws
+                        NoSuchFieldException, IllegalAccessException {
+        Class<ClassA> cls = ClassA.class;
+
+        Field list = cls.getField("list");
+        list.set(null, new ArrayList()); //throw NullPointerException
+
+        list.set(new Object(), new ArrayList()); //throw IllegalArgumentException
 
     }
 }
