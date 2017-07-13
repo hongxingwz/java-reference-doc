@@ -15,21 +15,19 @@ public class MethodA<K extends Object & Serializable, V extends Number & Seriali
 
 ```java
 public interface TypeVariable<D extends GenenricDelaration> extends Type, AnnotatedElement{
-    
+
     Type[] getBounds();
-    
+
     D getGenericDeclaration();
-    
+
     String getName();
-    
+
     //1.8 added
     AnnotatedType[] getAnnotatedBounds();
 }
 ```
 
-
-
-## Type\[\] getBounds\(\) 
+## Type\[\] getBounds\(\)
 
 返回表示此类型变量上边界的Type对象数组。注意，如果未显式声明上边界，则上边界为Object。
 
