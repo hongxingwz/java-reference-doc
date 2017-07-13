@@ -19,7 +19,7 @@ public class MethodA<K extends Object & Serializable, V extends Number & Seriali
 class MethodATest{
     public static void main(String[] args) throws
              NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-             
+
         Class<MethodA> methodAClass = MethodA.class;
         Method[] methods = methodAClass.getDeclaredMethods();
         for (Method method : methods) {
@@ -46,7 +46,35 @@ String Integer String String
 */
 ```
 
-* getParameterCount\(\);
+* getParameterCount\(\):返回可执行对象参数的数量
+
+```java
+public class MethodA<K extends Object & Serializable, V extends Number & Serializable> {
+
+    public <T extends Number & Serializable> void method(T t) {
+
+        System.out.println("I am invoked");
+    }
+
+    public void sayHello(String name, Integer age, String love, String yijie) {
+
+    }
+
+}
+
+class MethodATest{
+    public static void main(String[] args) throws
+            NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        Class<MethodA> methodAClass = MethodA.class;
+        Method[] methods = methodAClass.getDeclaredMethods();
+        for (Method method : methods) {
+            System.out.println(method.getParameterCount());
+            System.out.println("----------------");
+        }
+
+    }
+}
+```
 
 
 
