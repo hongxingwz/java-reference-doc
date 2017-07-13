@@ -124,7 +124,82 @@ java.lang.String java.lang.Integer java.lang.String java.lang.String
 
 * Class&lt;?&gt; getExceptionTypes\(\);
 
+```java
+public class MethodA<K extends Object & Serializable, V extends Number & Serializable> {
 
+    public <T extends Number & Serializable> void method(T t) throws
+                        ArrayIndexOutOfBoundsException, IllegalStateException{
+
+        System.out.println("I am invoked");
+    }
+
+    public void sayHello(String name, Integer age, String love, String yijie, Object... obj)
+        throws NullPointerException, IllegalArgumentException{
+
+    }
+
+}
+
+class MethodATest{
+    public static void main(String[] args) throws
+            NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        Class<MethodA> methodAClass = MethodA.class;
+        Method[] methods = methodAClass.getDeclaredMethods();
+        for (Method method : methods) {
+            Class<?>[] exceptionTypes = method.getExceptionTypes();
+            for (Class<?> exceptionType : exceptionTypes) {
+                System.out.println(exceptionType.getSimpleName());
+            }
+            System.out.println("--------------");
+        }
+
+    }
+}
+/*
+output:
+
+ArrayIndexOutOfBoundsException
+IllegalStateException
+--------------
+NullPointerException
+IllegalArgumentException
+--------------
+*/
+```
+
+* Type\[\] getGenericExceptionTypes\(\)
+
+```java
+public class MethodA<K extends Object & Serializable, V extends Number & Serializable> {
+
+    public <T extends Number & Serializable> void method(T t) throws
+                        ArrayIndexOutOfBoundsException, IllegalStateException{
+
+        System.out.println("I am invoked");
+    }
+
+    public void sayHello(String name, Integer age, String love, String yijie, Object... obj)
+        throws NullPointerException, IllegalArgumentException{
+
+    }
+
+}
+
+class MethodATest{
+    public static void main(String[] args) throws
+            NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        Class<MethodA> methodAClass = MethodA.class;
+        Method[] methods = methodAClass.getDeclaredMethods();
+        for (Method method : methods) {
+            Type[] genericExceptionTypes = method.getGenericExceptionTypes();
+            for (Type type : genericExceptionTypes) {
+                System.out.println(type.getTypeName());
+            }
+        }
+
+    }
+}
+```
 
 
 
