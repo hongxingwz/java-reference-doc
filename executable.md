@@ -120,8 +120,9 @@ class MethodATest{
 T 
 java.lang.String java.lang.Integer java.lang.String java.lang.String 
 */
-
 ```
+
+* Class&lt;?&gt; getExceptionTypes\(\);
 
 
 
