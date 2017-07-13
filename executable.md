@@ -195,10 +195,56 @@ class MethodATest{
             for (Type type : genericExceptionTypes) {
                 System.out.println(type.getTypeName());
             }
+            System.out.println("-------------");
         }
 
     }
 }
+/*
+output:
+
+java.lang.ArrayIndexOutOfBoundsException
+java.lang.IllegalStateException
+-------------
+java.lang.NullPointerException
+java.lang.IllegalArgumentException
+-------------
+*/
+```
+
+* String toGenericString\(\);
+
+```java
+public class MethodA<K extends Object & Serializable, V extends Number & Serializable> {
+
+    public <T extends Number & Serializable> void method(T t) throws
+                        ArrayIndexOutOfBoundsException, IllegalStateException{
+
+        System.out.println("I am invoked");
+    }
+
+    public void sayHello(String name, Integer age, String love, String yijie, Object... obj)
+        throws NullPointerException, IllegalArgumentException{
+
+    }
+
+}
+
+class MethodATest{
+    public static void main(String[] args) throws
+            NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        Class<MethodA> methodAClass = MethodA.class;
+        Method[] methods = methodAClass.getDeclaredMethods();
+        for (Method method : methods) {
+            System.out.println(method.toGenericString());
+        }
+
+    }
+}
+/*
+public <T> void com.jianglei.method.MethodA.method(T) throws java.lang.ArrayIndexOutOfBoundsException,java.lang.IllegalStateException
+public void com.jianglei.method.MethodA.sayHello(java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Object...) throws java.lang.NullPointerException,java.lang.IllegalArgumentException
+*/
 ```
 
 
