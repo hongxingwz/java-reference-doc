@@ -53,15 +53,37 @@ public class ClassA<E> {
 
 
     public static void main(String[] args) throws 
-    NoSuchFieldException, IllegalAccessException {
+                    NoSuchFieldException, IllegalAccessException {
         Class<ClassA> cls = ClassA.class;
-        Field age = cls.getDeclaredField("list");//throw NullPointerException
+        Field list = cls.getDeclaredField("list");
+        list.get(null); //throw NullPointerException
+        list.get(new Object()); //throw IllegalArgumentException
     }
 
 }
 ```
 
 如果此字段带有private等访问权限，说明此字段不可以被访问，此方法会抛出一个IllegalAccessException
+
+```java
+public class ClassA<E> {
+    private String name = "dengyi";
+
+    public static Integer age = 28;
+
+    public List<E> list = new ArrayList<>();
+
+}
+
+class ClassATest{
+    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
+        Class<ClassA> cls = ClassA.class;
+        Field name = cls.getDeclaredField("name");
+        name.get(new ClassA()); //throw IllegalAccessException
+
+    }
+}
+```
 
 最后，值会被从实例或静态字段中提取出来。如果字段是基本类型，将会包装成引用类型，否则原封不动的返回
 
