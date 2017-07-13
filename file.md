@@ -2,6 +2,19 @@
 
 ![](/assets/snapshot37.png)
 
+## 测试类
+
+```java
+public class ClassA<E> {
+    private String name = "dengyi";
+
+    public static Integer age = 28;
+
+    public List<E> list = new ArrayList<>();
+
+}
+```
+
 ## 方法摘要
 
 * isEnumConstant\(\):  检测成员是否是枚举的常量
@@ -90,11 +103,28 @@ class ClassATest{
 ```java
 public class ClassA<E> {
     private String name = "dengyi";
-
-    public static Integer age = 28;
+    
+    //基本类型
+    public static int age = 28;
 
     public List<E> list = new ArrayList<>();
 
+
+    public static void main(String[] args) throws
+                        NoSuchFieldException, IllegalAccessException {
+        Class<ClassA> cls = ClassA.class;
+        ClassA classA = new ClassA();
+
+        Field age = cls.getField("age");
+        Field list = cls.getField("list");
+
+        Object o = age.get(classA);
+        System.out.println(o instanceof Integer); //基本类型返回其包装类
+        
+        Object o1 = list.get(classA);
+        System.out.println(o1 instanceof List); //引用类型原样返回
+
+    }
 }
 ```
 
