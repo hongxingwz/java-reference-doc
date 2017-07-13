@@ -208,5 +208,30 @@ class ClassATest{
 }
 ```
 
+如果此字段是final，此方法会抛出一个IllegalAccessException。除非调用setAccessible\(true\)且此字段是非静态的。在通过程序的其他部分可以访问类的实例之前，只有使用空白 final 字段反序列化或重构类的实例期间，以这种方式设置 final 字段才有意义
+
+```java
+public class ClassA<E> {
+    public final String name = "dengyi"; //字段为final
+
+    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
+        Class<ClassA> cls = ClassA.class;
+        Field name = cls.getField("name");
+
+        ClassA classA = new ClassA();
+        name.set(classA, "jianglei"); //throw IllegalAccessException
+    }
+}
+
+```
+
+如果底层字段的类型为某一基本类型，则可以尝试使用解包转换将新值转换为基本类型的值。如果该尝试失败，则此方法将抛出一个`IllegalArgumentException`。
+
+如果在进行可能的解包之后，无法通过某一标识或扩展转换将新值转换为底层字段的类型，则此方法将抛出一个`IllegalArgumentException`。
+
+---
+
+* 剩下的就是对八种基本类型的get 和 set 了，基本上和上面介绍的get 和 set 一样，这里就不作过多介绍了
+
 
 
