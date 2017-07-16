@@ -61,12 +61,16 @@ int minute = c.get(Calender.MINUTE); //return: 30
 ```
 
 * **Calener.SECOND设置秒**
-  \`\`\`java
-  Calender c = Calender.getInstance\(\);
-  c.set\(Calender.SECOND, 23\);
-  c.get\(Calender.SECOND\); //return: 23
 
-\`\`\`
+```java
+Calender c = Calender.getInstance();
+c.set(Calender.SECOND, 23);
+c.get(Calender.SECOND); //return: 23
+```
+
+
+
+
 
 * **WEEK\_OF\_YEAR设置一年的第几周**
 
@@ -81,7 +85,7 @@ int minute = c.get(Calender.MINUTE); //return: 30
 * **WEEK\_OF\_YEAR一年的第几周**
 
 * **ZONE\_OFFSET**  
-  **疑问Calender.DATE 与 Calender.DATE\_OF\_MONTH的区别？    
+  **疑问Calender.DATE 与 Calender.DATE\_OF\_MONTH的区别？      
   **没有区别，他们两是同意词，其表示的数值都是5
 
 ## 方法
@@ -99,6 +103,7 @@ int minute = c.get(Calender.MINUTE); //return: 30
 * **set\(int year, int month, int date\)**
 
 * **set\(int year, int month, int date, int hourOfDay, int minute\)**
+
 * **set\(int year, int month, int date, int hourOfDay, int minute, int second\)**
 
 * **clear\(\)**重置为格林尼治时间
@@ -108,11 +113,13 @@ int minute = c.get(Calender.MINUTE); //return: 30
 * **isSet\(int field\)**
 
 * **Set&lt;String&gt; getAvailableCalendarTypes\(\)**
+
 * **String getCalendarType\(\)**
 
 * **boolean before\(Object when\)**
 
 * **boolean after\(Object when\)**
+
 * **int compareTo\(Calender anotherCalendar\)**
 
 * **add\(int field, int amount\)**
@@ -122,6 +129,7 @@ int minute = c.get(Calender.MINUTE); //return: 30
 * **getMinimum\(int field\)**
 
 * **getMaximum\(int field\)**
+
 * **getGreatestMaximum\(int field\)**
 * **getLeastMinimum\(int field\)**
 * **getActualMinimum\(int field\)**
