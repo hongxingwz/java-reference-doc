@@ -117,4 +117,10 @@ int minute = c.get(Calender.MINUTE); //return: 30
 
 * **add(int field, int amount)**
 
+* **getMinimum(int field)**
+* **getMaximum(int field)**
+* **getGreatestMaximum(int field)**
+* **getLeastMinimum(int field)**
+* **getActualMinimum(int field)**
+* **getActualMaximum(int field)**
 
