@@ -105,6 +105,12 @@ c.get(Calender.SECOND); //return: 23
 
 * **get(int field)**
 
+* **set(int field, int value)**
+* **set(int year, int month, int date)**
+* **set(int year, int month, int date, int hourOfDay, int minute)**
+* **set(int year, int month, int date, int hourOfDay, int minute, int second)**
+
+
 
 
  
