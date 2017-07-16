@@ -103,6 +103,8 @@ c.get(Calender.SECOND); //return: 23
 * **setTimeInMillis()**
 * **getTimeInMillis()**
 
+* **get(int field)**
+
 
 
  
