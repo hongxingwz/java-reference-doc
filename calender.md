@@ -83,10 +83,27 @@ c.get(Calender.SECOND); //return: 23
 ```
 
 * **WEEK_OF_YEAR设置一年的第几周**
+
+* **DAY_OF_WEEK一周的第几天**
+* **DAY_OF_MONTH一月的第几天**
 * **DAY_OF_YEAR一年的第几天**
- 
+
+* **WEEK_OF_MONTH一个月的第几周**
+* **WEEK_OF_YEAR一年的第几周**
+
+* **ZONE_OFFSET**
 **疑问Calender.DATE 与 Calender.DATE\_OF\_MONTH的区别？
 **没有区别，他们两是同意词，其表示的数值都是5
+
+
+## 方法
+* **Date getTime()**
+* **setTime setTime(Date date)**
+* **Date getTimeInMillis()**
+* **setTimeInMillis()**
+* **getTimeInMillis()**
+
+
 
  
 
