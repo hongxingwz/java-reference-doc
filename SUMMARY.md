@@ -49,4 +49,6 @@
 * [TypeVariable](typevariable.md)
 * [Executable](executable.md)
 * [Objects](objects.md)
+* [Parameter](parameter.md)
+* [Date](date.md)
 

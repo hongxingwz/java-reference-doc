@@ -10,7 +10,9 @@
 
 * getTypeName\(\)
 
+## UML类图
 
+![](/assets/屏幕快照 2017-07-16 上午6.45.20.png)
 
 ## raw type\(原始类型\)
 
@@ -80,14 +82,12 @@ public class Pair{
 }
 ```
 
-
-
 **带有限定的泛型类型**
 
 ```java
 public class Pair<T extends Comparable<T>&Serializable> {
     private T frist;
-    
+
     private T second;
 
     public Pair(T frist, T second) {
@@ -201,7 +201,7 @@ java.util.List<? super java.lang.Comparable<T>>
 
 ```java
 public class ArrayReflection<T> {
-    
+
     //基本类型数组
     private int[] primitArr;
 
