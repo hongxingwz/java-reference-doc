@@ -52,4 +52,5 @@
 * [Parameter](parameter.md)
 * [Date](date.md)
 * [Calender](calender.md)
+* [Random](random.md)
 
