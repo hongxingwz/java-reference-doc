@@ -49,7 +49,9 @@ am_pm = c.get(Calender.AM_PM); //return: 1
 
 
  
-**Calender.HOUR 12小时制设置小时**
+**Calender.HOUR 12小时制设置小时设置小时**
+
+**Calender.HOUR_OF_DAY 24小时设制设置小时**
 
 
 
