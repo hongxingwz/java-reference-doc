@@ -110,6 +110,7 @@ c.get(Calender.SECOND); //return: 23
 * **set(int year, int month, int date, int hourOfDay, int minute)**
 * **set(int year, int month, int date, int hourOfDay, int minute, int second)**
 
+* **clear()**重置为格林尼治时间
 
 
 
