@@ -73,6 +73,7 @@ int minute = c.get(Calender.MINUTE); //return: 30
 * **DAY\_OF\_WEEK一周的第几天**
 
 * **DAY\_OF\_MONTH一月的第几天**
+
 * **DAY\_OF\_YEAR一年的第几天**
 
 * **WEEK\_OF\_MONTH一个月的第几周**
@@ -80,7 +81,7 @@ int minute = c.get(Calender.MINUTE); //return: 30
 * **WEEK\_OF\_YEAR一年的第几周**
 
 * **ZONE\_OFFSET**  
-  **疑问Calender.DATE 与 Calender.DATE\_OF\_MONTH的区别？  
+  **疑问Calender.DATE 与 Calender.DATE\_OF\_MONTH的区别？    
   **没有区别，他们两是同意词，其表示的数值都是5
 
 ## 方法
@@ -96,32 +97,35 @@ int minute = c.get(Calender.MINUTE); //return: 30
 * **set\(int field, int value\)**
 
 * **set\(int year, int month, int date\)**
+
 * **set\(int year, int month, int date, int hourOfDay, int minute\)**
 * **set\(int year, int month, int date, int hourOfDay, int minute, int second\)**
 
 * **clear\(\)**重置为格林尼治时间
 
 * **clear\(int field\)**
+
 * **isSet\(int field\)**
 
-
-
-
-
 * **Set&lt;String&gt; getAvailableCalendarTypes\(\)**
-* **String getCalendarType()** 
+* **String getCalendarType\(\)**
 
-* **boolean before(Object when)**
-* **boolean after(Object when)**
-* **int compareTo(Calender anotherCalendar)**
+* **boolean before\(Object when\)**
 
-* **add(int field, int amount)**
-* **roll(int field, int amount)**
+* **boolean after\(Object when\)**
+* **int compareTo\(Calender anotherCalendar\)**
 
-* **getMinimum(int field)**
-* **getMaximum(int field)**
-* **getGreatestMaximum(int field)**
-* **getLeastMinimum(int field)**
-* **getActualMinimum(int field)**
-* **getActualMaximum(int field)**
+* **add\(int field, int amount\)**
+
+* **roll\(int field, int amount\)**
+
+* **getMinimum\(int field\)**
+
+* **getMaximum\(int field\)**
+* **getGreatestMaximum\(int field\)**
+* **getLeastMinimum\(int field\)**
+* **getActualMinimum\(int field\)**
+* **getActualMaximum\(int field\)**
+
+
 
