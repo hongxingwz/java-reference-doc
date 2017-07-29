@@ -1,3 +1,31 @@
-# My Awesome Book
+# Properties
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+注解符为: \#或者!
+
+空白字符为: ' ', '\t', '\f'
+
+key/value的分隔符为： '=' 或者 ':'
+
+```
+name:jianglei
+age=18
+```
+
+自然行分隔符为：'\r', '\n', '\r\n'
+
+逻辑行：可能分割到多个自然行中，使用反斜杠'\'来连接多处自然行
+
+```
+name = \
+    
+```
+
+注释行：使用注释符作为首个非空白字符的自然行
+
+```
+#comment
+      #comment
+```
+
+
+
