@@ -17,7 +17,6 @@ age=18
 
 ```
 name = \
-    
 ```
 
 注释行：使用注释符作为首个非空白字符的自然行
@@ -27,5 +26,17 @@ name = \
       #comment
 ```
 
+空白字符的自然行会被认为是空行而被忽略
 
+```
+name=jianglei
+
+age=18
+```
+
+```
+        name     =        jianglei                                \n
+```
+
+**这样key为name， value值为'jianglei                                '**
 
