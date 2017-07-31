@@ -55,4 +55,5 @@
 * [Random](random.md)
 * Properties
 * [资源文件的一些介绍](zi-yuan-wen-jian-de-yi-xie-jie-shao.md)
+* [Properties](properties.md)
 
