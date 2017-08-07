@@ -58,4 +58,5 @@
 * [Properties](properties.md)
 * [接口 interface](jie-kou-interface.md)
 * [String](string.md)
+* [Map](map.md)
 
