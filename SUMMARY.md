@@ -59,4 +59,5 @@
 * [接口 interface](jie-kou-interface.md)
 * [String](string.md)
 * [Map](map.md)
+* [startsWith 和 endsWith](startswith-he-endswith.md)
 
