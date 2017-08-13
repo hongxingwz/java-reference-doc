@@ -66,6 +66,6 @@
   * [getInterfaces\(\) 获取实现接口](getinterfaces-huo-qu-shi-xian-jie-kou.md)
   * [getComponentType\(\) 获取组件](getcomponenttype-huo-qu-zu-jian.md)
   * [isPrimitive\(\) 判断是否是原始类型](isprimitive-pan-duan-shi-fou-shi-yuan-shi-lei-xing.md)
-
-
+* [isBridge\(\) 判断是否是桥方法](isbridge-pan-duan-shi-fou-shi-qiao-fang-fa.md)
+* [isSynthetic\(\) 判断方法是否是合成方法](issynthetic-pan-duan-fang-fa-shi-fou-shi-he-cheng-fang-fa.md)
 
