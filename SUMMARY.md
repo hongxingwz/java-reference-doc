@@ -65,6 +65,7 @@
   * [getSuperClass\(\) 获取父类](getsuperclasshuo-qu-fu-7c7b29.md)
   * [getInterfaces\(\) 获取实现接口](getinterfaces-huo-qu-shi-xian-jie-kou.md)
   * [getComponentType\(\) 获取组件](getcomponenttype-huo-qu-zu-jian.md)
+  * [isPrimitive\(\) 判断是否是原始类型](isprimitive-pan-duan-shi-fou-shi-yuan-shi-lei-xing.md)
 
 
 
