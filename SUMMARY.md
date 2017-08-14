@@ -72,7 +72,9 @@
 * Method
   * [isBridge\(\) 判断是否是桥方法](isbridge-pan-duan-shi-fou-shi-qiao-fang-fa.md)
   * [isSynthetic\(\) 判断方法是否是合成方法](issynthetic-pan-duan-fang-fa-shi-fou-shi-he-cheng-fang-fa.md)
-
+  * [isVarArgs\(\) 判断此方法具不具有可变数量的参数](isvarargs-pan-duan-ci-fang-fa-ju-bu-ju-you-ke-bian-shu-liang-de-can-shu.md)
+  * [getExceptionTypes\(\) 返回异常类型](public-class-getexceptiontypes-fan-hui-yi-chang-lei-xing.md)
+  * [equals\(Object obj\) 判断obj与此方法的相等性](equalsobject-obj-pan-duan-obj-yu-ci-fang-fa-de-xiang-deng-xing.md)
 
 
 
