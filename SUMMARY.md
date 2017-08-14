@@ -68,6 +68,9 @@
   * [isPrimitive\(\) 判断是否是原始类型](isprimitive-pan-duan-shi-fou-shi-yuan-shi-lei-xing.md)
   * [isBridge\(\) 判断是否是桥方法](isbridge-pan-duan-shi-fou-shi-qiao-fang-fa.md)
   * [isSynthetic\(\) 判断方法是否是合成方法](issynthetic-pan-duan-fang-fa-shi-fou-shi-he-cheng-fang-fa.md)
+  * [isArray\(\) 判断是否是数组](isarray-pan-duan-shi-fou-shi-shu-zu.md)
+  * [isAnnotation\(\) 判断是否为注解](isannotation-pan-duan-shi-fou-wei-zhu-jie.md)
+  * [isInterface\(\) 判断是否为接口](isinterface-pan-duan-shi-fou-wei-jie-kou.md)
 
 
 
