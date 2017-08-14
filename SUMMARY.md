@@ -68,7 +68,7 @@
   * [isArray\(\) 判断是否是数组](isarray-pan-duan-shi-fou-shi-shu-zu.md)
   * [isAnnotation\(\) 判断是否为注解](isannotation-pan-duan-shi-fou-wei-zhu-jie.md)
   * [isInterface\(\) 判断是否为接口](isinterface-pan-duan-shi-fou-wei-jie-kou.md)
-* Method
+* [Method](method.md)
   * [isBridge\(\) 判断是否是桥方法](isbridge-pan-duan-shi-fou-shi-qiao-fang-fa.md)
   * [isSynthetic\(\) 判断方法是否是合成方法](issynthetic-pan-duan-fang-fa-shi-fou-shi-he-cheng-fang-fa.md)
   * [isVarArgs\(\) 判断此方法具不具有可变数量的参数](isvarargs-pan-duan-ci-fang-fa-ju-bu-ju-you-ke-bian-shu-liang-de-can-shu.md)

@@ -14,8 +14,6 @@ public final class Array{
 }
 ```
 
-
-
 ### 实例化一个指定长度的一维数组
 
 使用指定的组件类型和长度创建一个新数组。
@@ -29,8 +27,6 @@ Array.newInstance(componentType, x);
 
 新数组的维度一定不能超过**255**。
 
-
-
 如果指定的componentType 为null, 则抛出NullPointerException
 
 如果组件类型是Void.TYPE 或数组的维度超出了255, 则抛出了IllegalArgumentException
@@ -39,7 +35,7 @@ Array.newInstance(componentType, x);
 
 **public static Object newInstance\(Class&lt;?&gt; componentType, int length\)**
 
-
+---
 
 ### 实例化一个指定组件类型和维度的数组
 
@@ -59,9 +55,11 @@ dimensions 表示新数组的维度
 
 如果指定的任何组件维度是负数则抛出NegativeArraySizeException
 
-
-
 **public static Object newInstance\(Class&lt;?&gt; componentType, int... dimensions\)**
 
+---
 
+**get\(Object array, int index\);**
+
+**set\(Object array, int index, Object value\);**
 
