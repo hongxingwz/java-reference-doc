@@ -10,8 +10,6 @@
 
 结论：我们知道在编写自定义注解时，可以通过指定@Inherited注解，指明白定义注解是否可以被继承
 
-
-
 编写类注解验证
 
 ```java
@@ -32,6 +30,41 @@ public class Person {}
 public class Student extends Person {
     public static void main(String[] args) {
         boolean res = Student.class.isAnnotationPresent(Dengyi.class); //true
+    }
+}
+```
+
+## 注意注解的传递性：
+
+如果被标注为@Inherited某注解 用在一个父类上，则其子类，孙子类都可以通过反射获取该注解
+
+```java
+@Target({ElementType.TYPE, ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+@Inherited
+public @interface Dengyi{
+    String value() default "";
+}
+```
+
+```
+@Dengyi
+public class A {
+}
+```
+
+```
+public class B extends A{
+}
+```
+
+```
+public class C extends B{
+
+    public static void main(String[] args){
+        Class<?> clz = C.class;
+        Dengyi dengyi = clz.getAnnotation(Dengyi.class);
+        System.out.println(dengyi);
     }
 }
 ```
