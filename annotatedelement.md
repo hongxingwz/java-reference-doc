@@ -6,15 +6,35 @@ getAnnotationsByType\(Class\) 和 getDeclaredAnnotationsByType\(Class\)支持获
 
 directly present, indirectly present, present, and associated 由此接口使用来精确地描述方法返回的是哪种注解
 
+**directly present**
+
+如果E具有RuntimeVisibleAnnotations 或 RuntimeVisibleParameterAnnotations  或 RuntimeVisibleTypeAnnotations属性，并且属性中包含A.我们就说A直接出现在元素E上
+
+**indirectly present**
+
+如果E具有RuntimeVisibleAnnotations 或 RuntimeVisibleParameterAnnotations 或 RuntimeVisibleTypeAnnotations属性，并且A的类型是可重复的，属性包含显示的一个注解，该注解包含A,并且其类型是A类型的容器。我们就是A间接的出现在元素E上。
+
+**present**
+
+如果下面的条件符合我们称A present  E :
+
+* A 直接出现在元素E上
+* A没有直接出现在元素E上，并且E是一个类，A类型是可以继承的，A\(present\)出现在了E的父类上了
+
+**associated**
+
+* A 直接或间接的出现在E上
+* 注解A类型没有直接或间接的出现在E上，并且E量个类，A类型是可以继承的，A is associated with the superclass of E
+
 定义获取注解的接口，其方法如下
 
 * isAnnotationPresent\(cls\)
-* getAnnotation\(cls\)
-* getAnnotations\(\)
-* getAnnotationsByType\(cls\)
-* getDeclaredAnnotation\(cls\)
-* getDeclaredAnnotations\(\)
-* getDeclaredAnnotationsByType\(cls\)
+* getAnnotation\(cls\)   --------------------------------&gt; **present**
+* getAnnotations\(\)      --------------------------------&gt; **present**
+* getAnnotationsByType\(cls\)----------------------&gt; **associated**
+* getDeclaredAnnotation\(cls\)----------------------&gt; **directly present**
+* getDeclaredAnnotations\(\)  ----------------------&gt; **directly present**
+* getDeclaredAnnotationsByType\(cls\)--------&gt; **directly present or indirectly present**
 
 ## UML类图
 
