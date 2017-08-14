@@ -42,7 +42,6 @@
   * [@Repeatable](repeatable.md)
 * [AnnotatedElement](annotatedelement.md)
 * [Type](type.md)
-* [Member](member.md)
 * [AccessibleObject](accessibleobject.md)
 * [Field](file.md)
 * [GenericDeclaration](genericdeclaration.md)
@@ -75,6 +74,10 @@
   * [isVarArgs\(\) 判断此方法具不具有可变数量的参数](isvarargs-pan-duan-ci-fang-fa-ju-bu-ju-you-ke-bian-shu-liang-de-can-shu.md)
   * [getExceptionTypes\(\) 返回异常类型](public-class-getexceptiontypes-fan-hui-yi-chang-lei-xing.md)
   * [equals\(Object obj\) 判断obj与此方法的相等性](equalsobject-obj-pan-duan-obj-yu-ci-fang-fa-de-xiang-deng-xing.md)
+* [Member](member.md)
+
+
+
 
 
 
