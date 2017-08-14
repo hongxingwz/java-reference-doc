@@ -34,7 +34,7 @@ public class Student extends Person {
 }
 ```
 
-## 注意注解的传递性：
+## 注意注解继承的传递性：
 
 如果被标注为@Inherited某注解 用在一个父类上，则其子类，孙子类都可以通过反射获取该注解
 
@@ -66,6 +66,60 @@ public class C extends B{
         Dengyi dengyi = clz.getAnnotation(Dengyi.class);
         System.out.println(dengyi);
     }
+}
+```
+
+## 重写或实现方法会覆盖掉原有方法的注解
+
+这个应当这样理解  
+
+
+```java
+public interface Map{
+    @Dengyi
+    void put();
+}
+```
+
+```java
+public class HashMap implements Map{
+    @Override
+    public void put(){  //这里相当于把接口的方法想覆盖掉了，当然就没有原来方法的注解了
+    }
+    
+    public static void main (String[] args) throws NoSuchMethodException{
+        Class<HashMap> clz = HashMap.class;
+        Method put = clz.getMethod("put");
+        Dengyi annotation = put.getAnnotation(Dengyi.class);
+        System.out.println(annotation); //output: null 
+        
+        Class<Map> clz2 = Map.class;
+        Method put2 = clz2.getMethod("put")
+        Dengyi dengyi = put2.getAnnotation(Dengyi.class);
+        System.out.println(dengyi); //output: @com.jianglei3.bean.Dengyi(value=)
+    }
+}
+```
+
+## 子类继承父类的方法会继承注解
+
+因为子类掉用父类方法时，会去父类寻找该方法的信息
+
+```java
+public class MMap{
+    @Dengyi
+    public void put(){}
+}
+```
+
+```java
+public class HashMap extend MMap{
+
+    public static void main(String[] args) throws NoSuchMethodException{
+        Method method = MMap.class.getMethod("put");
+        Annotation dengyi = method.getAnnotation(Dengyi.class); 
+        System.out.println(dengyi); //output: @com.jianglei3.bean.Dengyi(value=)
+
 }
 ```
 
