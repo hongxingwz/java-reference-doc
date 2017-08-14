@@ -47,18 +47,18 @@ public @interface Dengyi{
 }
 ```
 
-```
+```java
 @Dengyi
 public class A {
 }
 ```
 
-```
+```java
 public class B extends A{
 }
 ```
 
-```
+```java
 public class C extends B{
 
     public static void main(String[] args){
