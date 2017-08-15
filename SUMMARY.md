@@ -76,4 +76,5 @@
   * [equals\(Object obj\) 判断obj与此方法的相等性](equalsobject-obj-pan-duan-obj-yu-ci-fang-fa-de-xiang-deng-xing.md)
 * [Member](member.md)
 * [Array](array.md)
+* [Properties2](properties2.md)
 
