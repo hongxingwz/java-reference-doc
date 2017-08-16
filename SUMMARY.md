@@ -52,7 +52,7 @@
 * [Date](date.md)
 * [Calender](calender.md)
 * [Random](random.md)
-* Properties
+* [Properties](properties.md)
 * [资源文件的一些介绍](zi-yuan-wen-jian-de-yi-xie-jie-shao.md)
 * [Properties](properties.md)
 * [接口 interface](jie-kou-interface.md)

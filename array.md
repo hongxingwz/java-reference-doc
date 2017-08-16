@@ -59,7 +59,18 @@ dimensions 表示新数组的维度
 
 ---
 
+**public static native int getLength\(Object array\) throws IllegalArgumentException**  
+返回指定数组对象的长度， 以int的形式  
+如果array为null，则会抛出一个空指针异常
+
+## 如果array不是数组对象，则会抛出一个IllegalArgumentException
+
 **get\(Object array, int index\);**
 
 **set\(Object array, int index, Object value\);**
+
+  
+NullPointerException 如果指定的array对象为null  
+IllegalArgumentException 如果指定的对象不是一个数组  
+ArrayIndexOutOfBoundsException 如果指定的索引参数是负数，或其超过了指数的数组的长度。
 
