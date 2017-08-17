@@ -18,5 +18,10 @@ public @interface SuppressWarnings{
     String[] value();
 ```
 
+| 警告 | 说明 |
+| :--- | :--- |
+| unused | 抑制相关没有使用的代码 |
+| all | 抑制所有的警告 |
+
 
 
