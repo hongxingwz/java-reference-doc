@@ -34,6 +34,7 @@
   * [AnnotatedElement](annotatedelement.md)
   * [AccessibleObject](accessibleobject.md)
   * [Executable](executable.md)
+  * [AnnotatedType](annotatedtype.md)
 * [2 注解](2zhu-jie.md)
   * [2.1 基本语法](21-ji-ben-yu-fa.md)
   * [2.1.1 定义注解](211-ding-yi-zhu-jie.md)
@@ -87,4 +88,5 @@
 * [异常](yi-chang.md)
 * [Throwable](throwable.md)
 * [Annotation类](annotationlei.md)
+
 
