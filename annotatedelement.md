@@ -28,7 +28,7 @@ directly present, indirectly present, present, and associated 由此接口使用
 
 定义获取注解的接口，其方法如下
 
-* isAnnotationPresent\(cls\)
+* isAnnotationPresent\(cls\) --------------------------------&gt; **present**
 * getAnnotation\(cls\)   --------------------------------&gt; **present**
 * getAnnotations\(\)      --------------------------------&gt; **present**
 * getAnnotationsByType\(cls\)----------------------&gt; **associated**
