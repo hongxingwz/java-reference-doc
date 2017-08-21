@@ -1,6 +1,8 @@
 # Executable
 
-* Class&lt;?&gt;\[\] getParameterTypes\(\): 返回一个代表正常参数类型\(parameter types\)的数组，以声明时的顺序。如果没有参数返回一个长度为0的数组
+* **Class&lt;?&gt;\[\] getParameterTypes\(\): **
+
+返回一个代表正常参数类型\(parameter types\)的数组，以声明时的顺序。如果没有参数返回一个长度为0的数组
 
 ```java
 public class MethodA<K extends Object & Serializable, V extends Number & Serializable> {
@@ -46,7 +48,9 @@ String Integer String String
 */
 ```
 
-* int getParameterCount\(\):返回可执行对象参数的数量
+* **int getParameterCount\(\):**
+
+返回可执行对象参数的数量
 
 ```java
 public class MethodA<K extends Object & Serializable, V extends Number & Serializable> {
@@ -82,7 +86,9 @@ class MethodATest{
 */
 ```
 
-* Type\[\] getGenericParameterTypes\(\)
+* Type\[\] getGenericParameterTypes\(\)：
+
+获取泛型参数类型
 
 ```java
 public class MethodA<K extends Object & Serializable, V extends Number & Serializable> {
@@ -246,6 +252,14 @@ public <T> void com.jianglei.method.MethodA.method(T) throws java.lang.ArrayInde
 public void com.jianglei.method.MethodA.sayHello(java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Object...) throws java.lang.NullPointerException,java.lang.IllegalArgumentException
 */
 ```
+
+* Parameter\[\] getParameters\(\)
+* boolean isVarArgs\(\)
+* Annotation\[\]\[\] getParameterAnnotations\(\);
+* AnnotatedType getAnnotatedReturnType\(\);
+* AnnotatedType getAnnotatedReceiverType\(\);
+* getAnnotatedParameterTypes\(\);
+* getAnnotatedExceptionTypes\(\);
 
 
 
