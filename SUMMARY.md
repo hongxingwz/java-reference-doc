@@ -94,4 +94,5 @@
 * [移位操作符](yi-wei-cao-zuo-fu.md)
 * [枚举](mei-ju.md)
 * [基本enum特性](ji-ben-enum-te-xing.md)
+* [静态导入用于enum](jing-tai-dao-ru-yong-yu-enum.md)
 
