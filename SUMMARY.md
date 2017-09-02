@@ -95,4 +95,7 @@
 * [枚举](mei-ju.md)
 * [基本enum特性](ji-ben-enum-te-xing.md)
 * [静态导入用于enum](jing-tai-dao-ru-yong-yu-enum.md)
+* [向enum中添加新方法](xiang-enum-zhong-tian-jia-xin-fang-fa.md)
+* [覆盖enum的方法](fu-gai-enum-de-fang-fa.md)
+* [switch语句中的enum](switchyu-ju-zhong-de-enum.md)
 
