@@ -162,6 +162,35 @@ Blowing dry
 
 */
 ```
+与使用匿名内部类相比较，定义常量相关方法语法更高效，简洁。
+这个例子也展示了**EnumSet**了一些特性。因为它是一个集合，所以寻于同一个元素而言，只能出现一次，因此对同一个参数重复地调用**add()**方法会被忽略掉(这是正确的行为，因为一个bit位开关只能"打开"一次)。同样地，向**EnumSet**添加**enum**实例的顺序并不重要，因为其输出的次序决定于**enum**实例定义时的次序。
+除实现abstract方法以外，程序员是否可以覆盖常量相关的方法呢？答案是肯定的，参考下面的程序：
+
+
+```
+public enum  OverrideConstantSpecific {
+    NUT, BOLT,
+    WASHER{
+        void f() {
+            System.out.println("Overriden method");
+        }
+    };
+
+    void f() {
+        System.out.println("default behavior");
+    }
+
+    public static void main(String[] args) {
+        for (OverrideConstantSpecific ocs : values()) {
+            System.out.println(ocs + ": ");
+            ocs.f();
+        }
+    }
+}
+```
+虽然enum有些限制，但是一般而言，我们还是可以将其看作是类。
+
+
 
 
 
