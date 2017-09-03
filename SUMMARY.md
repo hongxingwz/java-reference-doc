@@ -98,4 +98,5 @@
 * [向enum中添加新方法](xiang-enum-zhong-tian-jia-xin-fang-fa.md)
 * [覆盖enum的方法](fu-gai-enum-de-fang-fa.md)
 * [switch语句中的enum](switchyu-ju-zhong-de-enum.md)
+* [values\(\)的神秘之处](valuesde-shen-mi-zhi-chu.md)
 
