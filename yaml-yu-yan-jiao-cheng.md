@@ -8,7 +8,7 @@ YAML是专门用来写配置文件的语言，非常简洁和强大，远比JSON
 
 YAML语言\(发音/ˈjæməl/\)的设计目标，就是方便人类读写。它实质上是一种能用的数据串行化格式。它的基本语法规则如下。
 
-*  大小写敏感
+* 大小写敏感
 * 使用缩进表示层级关系
 * 缩进时不允许使用Tab键，只允许使用空格
 * 缩进的空格数目不重要，只要相同层级的元素左侧对齐即可
@@ -20,8 +20,6 @@ YAML支持的数据结构有三种
 * 纯量\(scalars\): 单个的、不可再分的值
 
 以下分别介绍这三种数据结构。
-
-
 
 ## 对象
 
@@ -48,8 +46,6 @@ hash: {name: Steve, foo: bar}
 ```
 {hash: {name: Steve, foo: bar}}
 ```
-
-
 
 ## 数组
 
@@ -171,6 +167,57 @@ null用~表示
 ```
 parent: ~
 ```
+
+### 时间
+
+时间采用ISO8601格式
+
+```
+iso8601: 2001-12-14t21:59:43.1008:00
+```
+
+转换为JavaScript如下
+
+```
+{iso8601=Sat Dec 15 13:59:43 CST 2001}
+```
+
+### 日期
+
+日期采用复合iso8601格式的年，月，日表示
+
+```
+date: 1976-07-31
+```
+
+转为JavaScript如下
+
+```
+{date: new Date('1976-07-31')}
+```
+
+## 强制类型转换
+
+ 
+
+| !!null | null |
+| :--- | :--- |
+| !!bool | Boolean |
+| !!int | Integer, Long, BigInteger |
+| !!float | Double |
+| !!binary | String |
+| !!timestamp | java.util.Date, java.sql.Date, java.sql.Timestap |
+| !!omap, !!pairs | List of Object\[\] |
+| !!set | Set |
+| !!str | String |
+| !!seq | List |
+| !!map | Map |
+
+集合的默认实现是
+
+| List | ArrayList |
+| :--- | :--- |
+| Map | LinkedHashMap |
 
 
 
