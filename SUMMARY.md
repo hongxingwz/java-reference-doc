@@ -102,4 +102,5 @@
   * [实现，而非继承](shi-xian-ff0c-er-fei-ji-cheng.md)
   * [常量相关的方法](chang-liang-xiang-guan-de-fang-fa.md)
 * [序列化](xu-lie-hua.md)
+* [YAML 语言教程](yaml-yu-yan-jiao-cheng.md)
 
