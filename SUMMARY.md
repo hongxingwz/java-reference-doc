@@ -103,4 +103,6 @@
   * [常量相关的方法](chang-liang-xiang-guan-de-fang-fa.md)
 * [序列化](xu-lie-hua.md)
 * [YAML 语言教程](yaml-yu-yan-jiao-cheng.md)
+* [java1.8系列](java18xi-lie.md)
+* [接口默认方法和静态方法](jie-kou-mo-ren-fang-fa-he-jing-tai-fang-fa.md)
 
