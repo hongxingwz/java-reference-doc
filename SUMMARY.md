@@ -107,4 +107,5 @@
 * [接口默认方法和静态方法](jie-kou-mo-ren-fang-fa-he-jing-tai-fang-fa.md)
 * [编程规约](bian-cheng-gui-yue.md)
 * 命名风格
+* [常量定义](chang-liang-ding-yi.md)
 
