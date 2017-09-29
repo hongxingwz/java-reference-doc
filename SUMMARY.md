@@ -104,7 +104,7 @@
 * [序列化](xu-lie-hua.md)
 * [YAML 语言教程](yaml-yu-yan-jiao-cheng.md)
 * [java1.8系列](java18xi-lie.md)
-* [接口默认方法和静态方法](jie-kou-mo-ren-fang-fa-he-jing-tai-fang-fa.md)
+  * [接口默认方法和静态方法](jie-kou-mo-ren-fang-fa-he-jing-tai-fang-fa.md)
 * [编程规约](bian-cheng-gui-yue.md)
   * [命名风格](ming-ming-feng-ge.md)
   * [常量定义](chang-liang-ding-yi.md)
