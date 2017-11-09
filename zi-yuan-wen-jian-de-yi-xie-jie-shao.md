@@ -10,6 +10,35 @@ maven生成jar包后，里面会包含META-INF，这里面会包含pom.xml的信
 
 path不以“/"开头时，默认是从此类所在的包下取资源
 
+**相对路径的测试**
+
+
+
+```
+package com.smart.file;
+
+import org.junit.Test;
+
+public class Test01 {
+
+    @Test
+    public void test000001() {
+        URL resource = this.getClass().getResource("");
+        System.out.println(resource);
+        URL resource1 = this.getClass().getResource("Test01.class");
+        System.out.println(resource1);
+    }
+}
+/*
+output:
+file:/Users/jianglei/yunhe/spring4x/chapter2/target/test-classes/com/smart/file/
+file:/Users/jianglei/yunhe/spring4x/chapter2/target/test-classes/com/smart/file/Test01.class
+*/
+```
+
+
+
+
 path以”/"开头时，则是从classPath根下获取资源
 
 ## 2.通过本类的ClassLoader的getResource方法
@@ -39,5 +68,9 @@ WEB程序，里面的jar，resources都是由Tomcat内部来加载的，所以�
 
 如果你使用Test.class.getClassLoader\(\),可能会导致和当前线程所运行的类加载器不一致（因为java天生的多线程）
 
+
+##总结
+**返回结果中，如果找到对应的url则返回相应的url路径，
+如果没有找到对应的文件则返回null**
 
 
