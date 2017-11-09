@@ -69,6 +69,29 @@ WEB程序，里面的jar，resources都是由Tomcat内部来加载的，所以�
 如果你使用Test.class.getClassLoader\(\),可能会导致和当前线程所运行的类加载器不一致（因为java天生的多线程）
 
 
+**测试代码** 
+```
+public class Test01 {
+
+    @Test
+    public void test00002() {
+        URL resource = Thread.currentThread().getContextClassLoader().getResource("");
+        System.out.println(resource);
+        
+        //不能以"/"开头，否则永远返回null
+        resource = Thread.currentThread().getContextClassLoader().getResource("/");
+        System.out.println(resource);
+    }
+}
+/*
+file:/Users/jianglei/yunhe/spring4x/chapter2/target/test-classes/
+null
+*/
+```
+
+
+
+
 ##总结
 **返回结果中，如果找到对应的url则返回相应的url路径，
 如果没有找到对应的文件则返回null**
