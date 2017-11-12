@@ -112,6 +112,139 @@ public class PrintfSample {
 }
 ```
 
+## 6.是数组？不是数组？
+尽管在背地里，编译器会把匹配不确定实参的形参，转化为数组形参；而且也可以用数组包了实参，再传递给实参个数可变的方法；全是，这并不表示“能匹配不确定个实参的形参”和“数组形参”完全没有差异。
+
+一个明显的差异是，如果按照调用实参个数可变的方法的形式，来调用一个最后一个形参是数组形参的方法，只会导致一个“cannot be applied to”的编译错误。
+
+###清单10：一个“cannot be applied to”的编译错误
+
+
+```
+    private static void testOverloading(int... i) {
+        System.out.println("A");
+    }
+    
+    public void test02() {
+        testOverloading(1,2,3);编译出错
+    }
+```
+由于这一原因，不能在调用只支持用数组包裹实参的方法的时候(例如在不是专门为J2SE1.5设计第三方类库中遗留的那些)，直接采用这种简明的调用方式。
+
+如果不能修改原来的类，为要调用的方法增加参数个数可变的版本，而又想采用这种简单的调用方式，那么可以借助“引入外加函数(Introduce Foreign Method)” 和 “引入本地扩展（Intoduce Local Extension”的重构手法来近似的达到目的。
+
+##7.当个数可变的实参遇到泛型 
+J2SE 1.5中新增了“泛型”的机制，可以在一定条件下把一个类型参数化。例如，可以在编写一个类的时候，把一个方法的形参的类型用一个标识符（如T）来代表，至于这个标识符到底表示什么类型，则在生成这个类的实例的时候再行指定。这一机制可以用来提供更充分的代码重用和更严格的编译时类型检查。
+
+~~不过泛型机制去不能和个数可变的形参配合使用。如果把一个能和不确定个实参相匹配的形参的类型，用一个标识符来代表，那么编译器会给出一个“generic array creation”的错误。~~（我在JDK1.8里实验是支持的）。
+
+###清单11：当Varargs遇上泛型
+
+
+```
+private static void testVarargs(T... args) {//编译不会出错}
+```
+
+###清单12：可以编译的变通的做法
+
+
+```
+private static void testVarargs(T[] args){
+    for(int i = 0; i < args.length; i++){
+        System.out.println(args[i]);
+    }
+}
+```
+
+##重载中的选择问题
+Java支持“重载”的机制，允许在同一个类拥有许多只有形参列表不同的方法。然后，由编译器根据调用时的实参来选择到底要执行哪一个方法。
+
+传统上的选择，基本是依照“特殊者优先”的原则来进行。一个方法的特殊程序，取决于为了让它顺利运行而需要满足的条件的数目，需要条件越多的越特殊。
+
+在引入Varargs机制之后，这一原则仍然适用，只要考虑的问题丰富了一些--传统上，一个重载方法的各个版本之中，只有形参数量与实参数量正好一致的那皯有被进一步考虑的资格。但是Varargs机制引入之后，完全可以出现两个版本都能匹配，在其它方面也别无二致，只是一个实参个数固定，而一个实参个数可变的情况。
+
+遇到这种情况时，所用的判定规则是“实参个数固定的版本优先于实参个数可变的版本”。
+
+### 清单13：实参个数固定的版本优先
+
+
+```
+    @Test
+    public void test04() {
+        testOverloading1(1);
+
+        testOverloading1(1, 2);
+
+        testOverloading1(1, 2, 3);
+    }
+
+    private static void testOverloading1(int i) {
+        System.out.println("A");
+    }
+
+    private static void testOverloading1(int i, int j) {
+        System.out.println("b");
+    }
+
+    private static void testOverloading1(int i, int... more) {
+        System.out.println("c");
+    }
+```
+如果在编译器看来，同时有多个方法具有相同的优先权，它就会陷入无法就到底调用哪个方法作出一个选择的状态。在这样的时候，它就会产生一个“reference to 被调用的方法名 is ambiguous”的编译错误，并耐主的等候作了一些修改，足以免除它的迷惑的新源代码的到来。
+
+在引入了Varargs机制之后，这种可能导致迷或的情况，又增加了一些。例如现在可能会有两个版本都能匹配，在其它方面也如出一辙，而且都是实参个数可变的冲突发生。
+
+
+###清单14: 左右都不是，为难了编译器
+```
+    private static void testOverloading2(Object... args) {
+
+    }
+
+    private static void testOverloading2(Object o, Object... args) {
+
+    }
+
+    @Test
+    public void test05() {
+        testOverloading2("aa");
+    }
+```
+另外，因为J2SE1.5中有“Autoboxing/Auto-Unboxing”带来的新问题
+
+##清单15: Autoboxing/Auto-Unboxing带来的新问题
+
+
+```
+    public void test06() {
+        testOverloading3(1, 2);
+        testOverloading3((Integer)1, (Integer)2);
+
+    }
+
+    private static void testOverloading3(int... args) {
+
+    }
+
+    private static void testOverloading3(Integer... args) {
+
+    }
+```
+
+##9. 归纳总结
+和“用数组包裹”的做法相比，真正的实参个数可变的方法，在调用时传递参数的操作更为简单，含义也更为清楚。不过，这一机制也有它自身的局限，并不是一个完美的解决方案。
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
