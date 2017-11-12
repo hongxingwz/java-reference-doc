@@ -196,6 +196,28 @@ PrintWriter out = new PrintWriter("out.txt")){
 
 
 
+## 异常的异常链
+
+
+```
+public synchronized Throwable initCause(Throwable cause)
+
+```
+构造器
+
+
+```
+public Throwable(Throwable cause) {...
+```
+
+
+
+```
+public Throwable(String message, Throwable cause) {...
+```
+
+
+
 
 
 
