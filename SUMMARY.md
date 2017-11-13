@@ -36,7 +36,7 @@
   * [Executable](executable.md)
   * [AnnotatedType](annotatedtype.md)
   * [Member](member.md)
-  * [1 反射中的异常](fan-she-zhong-de-yi-chang.md)
+  * [反射中的异常](fan-she-zhong-de-yi-chang.md)
 * [2 注解](2zhu-jie.md)
   * [2.1 基本语法](21-ji-ben-yu-fa.md)
   * [2.1.1 定义注解](211-ding-yi-zhu-jie.md)
