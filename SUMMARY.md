@@ -111,4 +111,5 @@
 * [Ant path匹配原则](ant-pathpi-pei-yuan-ze.md)
 * [Java异常](javayi-chang.md)
 * [深入了解JAVA可变长度的参数\(Varargs\)](shen-ru-le-jie-java-ke-bian-chang-du-de-can-657028-varargs.md)
+* [接口的一些总结](jie-kou-de-yi-xie-zong-jie.md)
 
