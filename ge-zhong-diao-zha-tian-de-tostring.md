@@ -22,7 +22,7 @@ public String toString() {
 }
 ```
 
-### 想应的变种
+### 相应的变种
 
 > 注：这个就有点垃圾了，效率变得不在那么高
 
@@ -46,7 +46,31 @@ private static String toString5(List<?> list) {
 }
 ```
 
+## Arrays\#toString的方法
 
+> 注：这个toString也是比较高效的
+
+```
+    public static String toString(Object[] a) {
+        if (a == null) {
+            return "null";
+        }
+        int arrLen = a.length - 1;
+
+        if (arrLen == -1) {
+            return "[]";
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        for(int i = 0; ; i++) {
+            sb.append(a[i]);
+            if (i == arrLen) {
+                return sb.append("]").toString();
+            }
+            sb.append(",");
+        }
+    }
+```
 
 ## 先append逗号的，如果不是第一个，这也是一种思路
 
@@ -72,6 +96,10 @@ private static String toString6(Object[] obj) {
         return sb.toString();
     }
 ```
+
+## 
+
+
 
 
 
