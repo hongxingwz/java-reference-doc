@@ -156,13 +156,9 @@ ist<? extends Animal> list = new ArrayList<>();
 
 先分析如下：因为“? extends Animal”可代表Animal或其子类\(Bird, Cat\)，那上面的操作应该是可行的。事实上是“**不行**”，即无法通过编译。为什么呢？？
 
-
-
 在解释之前，再来重新强调一下已经知道的规则：在List&lt;Animal&gt; list里只能添加Animal类对象及其子类对象 \(如Cat和Bird对象\)，在List&lt;Bird&gt;里只能添加Bird类和其子类对旬\(如Magpie\),可不能添加Animal对象\(不是Bird的子类\)，类似的在List&lt;Cat&gt;和List&lt;Magpie&gt;里只能添加Cat和Bird对象\(或其子类对旬，不过这没有列出\)。现在再回头看一下testAdd\(\)方法，我们知道List&lt;Animal&gt;，List&lt;Cat&gt;等都是List&lt;? extends Animal&gt;的子类型。先假设传入的参娄为List&lt;Animal&gt;，则第一段代码的三个“add"操作都是可行的；可如果是List&lt;Bird&gt;呢？则只有第二个”add“可以执行；再假设传入的是List&lt;Tiger&gt;\(Tiger是想象出来的，可认为是Cat的子类\)，则三个”add“操作都不能执行。
 
 现在反过来说，给testAdd传入不同的参数，三个”add“操作都可能引发类型兼容问题，而传入的参数是未知的，所以java为了保护其类型一致，禁止向List&lt;? extends Animal&gt;添加任意对象，不过去可以添加**null**，即list.add\(null\)是可行的。有了上面谈到的基础，再来理解第二段代码就不难了，因为List&lt;? extends Animal&gt;的类型 "？ extends Animal"无法确定，可以是Animal，Bird或者Cat等，所以为了保护其类型的一致性，也是不能往list添加任意对象的，不过去可以添加**null**。
-
-
 
 **总结**
 
@@ -175,8 +171,6 @@ for(Animal animal : list){
     animal.eat();
 }
 ```
-
-
 
 ## 二、通配符的下界
 
@@ -196,7 +190,7 @@ list.add(new Magpie("magpie"));
 list.add(new Animal("animal"));
 ```
 
-看第一段代码，其分析如下，因为”? super Bird“代表了Bird或其父类，而Magpie是Bird的子类，所以上诉代码不可通过编译。而事实上是”行“，为什么呢？ 
+看第一段代码，其分析如下，因为”? super Bird“代表了Bird或其父类，而Magpie是Bird的子类，所以上诉代码不可通过编译。而事实上是”行“，为什么呢？
 
 在解疑之前，再来强调一个知识点，子类可以r指向父类，即Bird也是Animal对象。现在考虑传入的testAdd\(\)的所有可能的参数，可以是List&lt;Bird&gt;，List&lt;Animal&gt;， 或者List&lt;Object&gt;等等，发现这些参数的类型是Bird或其交类，那我们可以这样看，把bird, magpie看成Bird对象，也可以将bird, magpie看成Animal对象，类似的可看成Object对象，最后发现这些添加到List&lt;? super Bird&gt;list里的对象都是同一类对象\(如本文开篇提到的Test1\)，因此testAdd方法是符合逻辑，可以通过编译的。
 
@@ -217,4 +211,46 @@ for(Object object : list){
 原文链接
 
 [http://www.linuxidc.com/Linux/2013-10/90928p3.htm](http://www.linuxidc.com/Linux/2013-10/90928p3.htm)
+
+
+
+## 三、无界通配符
+
+知道了通配符的上界和下界，其实也等同于知道了无界通配符，不加任何修饰即可，单独一个“?”。如List&lt;?&gt;, "?"可以代表任意类型，“任意”也就是未知类型。无界通配符通常会用在下面两种情况：
+
+* 当方法是使用原始的Object类型作为参数时，如下:
+
+```
+    private static void printList(List<Object> list) {
+        for (Object o : list) {
+            System.out.println(o);
+        }
+    }
+```
+
+可以选择改为如下实现
+
+```
+private static void printList(List<?> list) {
+        for (Object o : list) {
+            System.out.println(o);
+        }
+    }
+```
+
+这样就可以兼容更多的输出，而不是单纯是List&lt;Object&gt;，如下：
+
+```
+List<Integer> integerList = Arrays.asList(1, 2, 3);
+List<String> list = Arrays.asList("one", "two", "three");
+
+printList(integerList);
+printList(list);
+```
+
+* 在定义的方法体的业务逻辑与泛型类型无关，如List.size, List.clean。实际上，最常用的就是Class&lt;?&gt;，因为Class&lt;T&gt;并没有依赖于T。
+
+最后提醒一下的就是，List&lt;Object&gt;与List&lt;?&gt;并不等同，List&lt;Object&gt;是List&lt;?&gt;的子类。还有不能往List&lt;?&gt; list里添加任意对象，除了null。
+
+
 
