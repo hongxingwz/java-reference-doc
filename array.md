@@ -69,8 +69,34 @@ dimensions 表示新数组的维度
 
 **set\(Object array, int index, Object value\);**
 
-  
 NullPointerException 如果指定的array对象为null  
 IllegalArgumentException 如果指定的对象不是一个数组  
 ArrayIndexOutOfBoundsException 如果指定的索引参数是负数，或其超过了指数的数组的长度。
+
+---
+
+## 对源码的一些总结
+
+八种基本类型的数组不是Object\[\].class的子类型
+
+```
+Object[].class.isAssignableFrom(int[].class);
+```
+
+但其八种基本包装类型，和其他对象的数组是Object\[\].class的子类型
+
+```
+Object[].class.isAssignableFrom(Integer[].class);
+Object[].class.isAssignableFrom(List[].class);
+```
+
+而
+
+```
+List[][].class.isAssignableFrom(List[][][].class)); //返回false
+```
+
+**因此在判断一个多维度的数组是最好用Object\[\],在JDK和Spring的源码里有体现到**
+
+
 
