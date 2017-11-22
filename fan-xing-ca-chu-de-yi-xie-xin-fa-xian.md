@@ -10,9 +10,12 @@ public Map<String, Object> getSystemProperties() {
 
 为方法声明的返回值是Map&lt;String, Object&gt;但是返回Map确是可以通过编译通过的，这引起了我大大的不解？
 
-猜测：与老代码兼容
+猜测：与老代码兼容,因为在Jdk1.4之前是没有泛型的
 
-
+```
+        List list = new ArrayList();
+        List<String> list2 = list; //可以通过编译
+```
 
 如果把代码改成这样
 
