@@ -120,4 +120,8 @@
 * [字符串拼接与StringBuilder的比较](zi-fu-chuanpin-jieyu-stringbuilder-de-bi-jiao.md)
 * [Boolean的一些总结](booleande-yi-xie-zong-jie.md)
 * [泛型擦除的一些新发现](fan-xing-ca-chu-de-yi-xie-xin-fa-xian.md)
+* 集合
+* Map
+* Set
+* [HashSet, TreeSet和LinkedHashSet的区别](hashset-treesethe-linkedhashset-de-qu-bie.md)
 
