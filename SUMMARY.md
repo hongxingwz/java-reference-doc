@@ -124,4 +124,5 @@
 * Map
 * Set
 * [HashSet, TreeSet和LinkedHashSet的区别](hashset-treesethe-linkedhashset-de-qu-bie.md)
+* [Collections容器工具类](collectionsrong-qi-gong-ju-lei.md)
 
