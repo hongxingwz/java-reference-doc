@@ -125,4 +125,5 @@
 * Set
 * [HashSet, TreeSet和LinkedHashSet的区别](hashset-treesethe-linkedhashset-de-qu-bie.md)
 * [Collections容器工具类](collectionsrong-qi-gong-ju-lei.md)
+* [同步方法和非同步方法的性能测试](tong-bu-fang-fa-he-fei-tong-bu-fang-fa-de-xing-neng-ce-shi.md)
 
