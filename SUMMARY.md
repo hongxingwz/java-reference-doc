@@ -127,4 +127,6 @@
 * [Collections容器工具类](collectionsrong-qi-gong-ju-lei.md)
 * [同步方法和非同步方法的性能测试](tong-bu-fang-fa-he-fei-tong-bu-fang-fa-de-xing-neng-ce-shi.md)
 * [Collection](collection.md)
+* 并发
+* [Java并发编程\(1\)：可重入内置锁](javabing-fa-bian-7a0b28-1-ff1a-ke-zhong-ru-nei-zhi-suo.md)
 
