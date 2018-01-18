@@ -129,4 +129,6 @@
 * [Collection](collection.md)
 * 并发
 * [Java并发编程\(1\)：可重入内置锁](javabing-fa-bian-7a0b28-1-ff1a-ke-zhong-ru-nei-zhi-suo.md)
+* [Java正则表达式](javazheng-ze-biao-da-shi.md)
+* [正则表达式贪婪与非贪婪模式](zheng-ze-biao-da-shi-tan-lan-yu-fei-tan-lan-mo-shi.md)
 
