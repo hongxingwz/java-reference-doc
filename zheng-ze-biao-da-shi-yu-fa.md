@@ -8,7 +8,7 @@
 
 | 字符 | 说明 |
 | :--- | :--- |
-| \ | 将下一字符标记为特殊字符、文本、反向引用或八进制转义符。例如，"n"匹配字符"n"。"\n"匹配换行符。序列"\\\\"匹配"\\", "\\\("匹配"\("。 |
+| \ | 将下一字符标记为特殊字符、文本、反向引用或八进制转义符。例如，"n"匹配字符"n"。"\n"匹配换行符。序列"\\"匹配"\", "\\("匹配"\("。 |
 | ^ | 匹配输入字符串开始的位置。如果设置了**RegExp**对象的Multiline属性，^还会与"\n"或"\r"之后的位置匹配。 |
 | $ | 匹配输入字符串结尾的位置。如果设置了**RegExp**对象的**Multiline**属性，$还会与"\n"或"\r"之前的位置匹配。 |
 | \* | 零次或多次匹配前面的字符或子表达式。例如, zo\*匹配"z"和"zoo"。\*等效于{0,}。 |
@@ -17,8 +17,6 @@
 | {n} | n是非负整数。正好匹配n次。例如, "o{2}"与"Bob"中的"o"不匹配，但与"food"中的两个"o"匹配。 |
 | {n, } | n是非负整数。至少匹配n次。例如, "o{2, }"不匹配"Bob"中的"o",而匹配"foooood"中的所有o。"o{1,}"等效于"o+"。"o{0,}"等效于"o\*"。 |
 | {n, m} |  |
-
-
 
 ## Matcher类的方法
 
@@ -33,8 +31,6 @@
 | 3 | public int end\(\) 返回最后匹配字符之后的偏移量。 |
 | 4 | public int end\(int group\) 返回在以前的匹配操作期间，由给定组所捕获子序列的最后字符之后的偏移量。 |
 
-
-
 ## 研究方法
 
 研究方法用来检查输入字符串并返回一个布尔值，表示是否找到该模式：
@@ -45,8 +41,6 @@
 | 2 | public boolean find\(\) 尝试查找与该模式匹配的输入序列的下一个子序列。 |
 | 3 | public boolean find\(int start\) 重围此匹配器，然后尝试查找匹配该模式、从指定索引开始的输入序列的下一个子序列。 |
 | 4 | public boolean matches\(\) 尝试将整个区域与模式匹配。 |
-
-
 
 ## 替换方法
 
@@ -60,8 +54,6 @@
 | 4 | public String replaceFirst\(String replacement\) 替换模式与给定替换字符串匹配的输入序列的第一个子序列。 |
 | 5 | public static String quoteReplacement\(String s\) 返回指定字符串的字面替换字符串。这个方法返回一个字符串，就像传递给Matcher类的appendReplacement方法一个字面字符串一样工作。 |
 
-
-
 ### matches和lookingAt方法
 
 matches和looingAt方法都用来尝试匹配一个输入序列模式。它们的不同是matches要求整个序列都匹配。而lookingAt不要求。lookingAt方法虽然不需要整句都匹配，但是需要从第一个字符开始匹配。
@@ -71,15 +63,38 @@ matches和looingAt方法都用来尝试匹配一个输入序列模式。它们�
 ```
 @org.junit.Test
 public void test34() {
-	Pattern foo = Pattern.compile("foo");
-	Matcher m1 = foo.matcher("foooooooooooooooooooooooooo");
-	Matcher m2 = foo.matcher("ooooooofooooooooooooooooooooooooooo");
+    Pattern foo = Pattern.compile("foo");
+    Matcher m1 = foo.matcher("foooooooooooooooooooooooooo");
+    Matcher m2 = foo.matcher("ooooooofooooooooooooooooooooooooooo");
 
-	System.out.println("lookingAt():" + m1.lookingAt());
-	System.out.println("matches():" + m1.matches());
-	System.out.println("lookingAt():" + m2.lookingAt());
+    System.out.println("lookingAt():" + m1.lookingAt());
+    System.out.println("matches():" + m1.matches());
+    System.out.println("lookingAt():" + m2.lookingAt());
 
 }
+```
+
+### replaceFirst和replaceAll方法
+
+replaceFirst和replaceAll方法用来替换匹配下则表达式的文本。不同的是，replaceFirst替换首次匹配，replaceAll替换所有匹配。
+
+下面的例子来解释这个功能：
+
+```
+@org.junit.Test
+	public void test35() {
+		Pattern p = Pattern.compile("dog");
+		String input = "The dog says meow. All dogs say meow. ";
+		String replace = "cat";
+
+		Matcher matcher = p.matcher(input);
+		String s = matcher.replaceAll(replace);
+		System.out.println(s);				//The cat says meow. All cats say meow. 
+
+		String s2 = Pattern.compile("dog").matcher(input).replaceFirst(replace);
+		System.out.println(s2);			// The cat says meow. All dogs say meow. 
+
+	}
 ```
 
 
