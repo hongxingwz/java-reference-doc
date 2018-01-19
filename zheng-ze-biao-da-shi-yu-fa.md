@@ -8,7 +8,7 @@
 
 | 字符 | 说明 |
 | :--- | :--- |
-| \ | 将下一字符标记为特殊字符、文本、反向引用或八进制转义符。例如，"n"匹配字符"n"。"\n"匹配换行符。序列"\\"匹配"\", "\\("匹配"\("。 |
+| \ | 将下一字符标记为特殊字符、文本、反向引用或八进制转义符。例如，"n"匹配字符"n"。"\n"匹配换行符。序列"\"匹配"\", "\\("匹配"\("。 |
 | ^ | 匹配输入字符串开始的位置。如果设置了**RegExp**对象的Multiline属性，^还会与"\n"或"\r"之后的位置匹配。 |
 | $ | 匹配输入字符串结尾的位置。如果设置了**RegExp**对象的**Multiline**属性，$还会与"\n"或"\r"之前的位置匹配。 |
 | \* | 零次或多次匹配前面的字符或子表达式。例如, zo\*匹配"z"和"zoo"。\*等效于{0,}。 |
@@ -82,19 +82,41 @@ replaceFirst和replaceAll方法用来替换匹配下则表达式的文本。不�
 
 ```
 @org.junit.Test
-	public void test35() {
-		Pattern p = Pattern.compile("dog");
-		String input = "The dog says meow. All dogs say meow. ";
-		String replace = "cat";
+    public void test35() {
+        Pattern p = Pattern.compile("dog");
+        String input = "The dog says meow. All dogs say meow. ";
+        String replace = "cat";
 
-		Matcher matcher = p.matcher(input);
-		String s = matcher.replaceAll(replace);
-		System.out.println(s);				//The cat says meow. All cats say meow. 
+        Matcher matcher = p.matcher(input);
+        String s = matcher.replaceAll(replace);
+        System.out.println(s);                //The cat says meow. All cats say meow. 
 
-		String s2 = Pattern.compile("dog").matcher(input).replaceFirst(replace);
-		System.out.println(s2);			// The cat says meow. All dogs say meow. 
+        String s2 = Pattern.compile("dog").matcher(input).replaceFirst(replace);
+        System.out.println(s2);            // The cat says meow. All dogs say meow. 
 
+    }
+```
+
+### appendReplacement 和 appendTail方法
+
+Matcher类也提供了appendReplacement和appendTail方法用于文本替换：
+
+看下面的例子来解释这个功能：
+
+```
+@org.junit.Test
+public void test36() {
+	Pattern p = Pattern.compile("a*b");
+	String str = "aabfooaabfooabfoob";
+	String replace = "-";
+	StringBuffer sb = new StringBuffer();
+	Matcher matcher = p.matcher(str);
+	while (matcher.find()) {
+		matcher.appendReplacement(sb, replace);
 	}
+	matcher.appendTail(sb);
+	System.out.println(sb);
+}
 ```
 
 
