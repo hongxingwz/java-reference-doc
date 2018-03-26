@@ -14,7 +14,7 @@ path不以“/"开头时，默认是从此类所在的包下取资源
 
 
 
-```
+```java
 package com.smart.file;
 
 import org.junit.Test;
@@ -70,7 +70,7 @@ WEB程序，里面的jar，resources都是由Tomcat内部来加载的，所以�
 
 
 **测试代码** 
-```
+```java
 public class Test01 {
 
     @Test
