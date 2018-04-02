@@ -138,4 +138,5 @@
 * [Java网络编辑--Socket与ServerSocket](javawang-luobian-8f91-socket-yu-serversocket.md)
 * [Base64原理解析](base64yuan-li-jie-xi.md)
 * [转：JAVA动态代理用法与实现过程](zhuan-ff1a-java-dong-tai-dai-li-yong-fa-yu-shi-xian-guo-cheng.md)
+* [转： Java中 CopyOnWriteArrayList的使用](zhuan-ff1a-java-zhong-copyonwritearraylist-de-shi-yong.md)
 
