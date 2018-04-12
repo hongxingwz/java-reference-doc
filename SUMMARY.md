@@ -141,4 +141,6 @@
 * [转： Java中 CopyOnWriteArrayList的使用](zhuan-ff1a-java-zhong-copyonwritearraylist-de-shi-yong.md)
 * [算法系列](suan-fa-xi-lie.md)
 * [引用链](yin-yong-lian.md)
+* [类型变量\(TypeVariable\)类型参数\(TypeParameter\)和参数化类型\(ParameterizedType\)的区别和联系](lei-xing-bian-91cf28-typevariablelei-xing-can-657028-typeparameter-he-can-shu-hua-lei-578b28-parameterizedtype-de-qu-bie-he-lian-xi.md)
+* [类型变量\(Type Variables\)](lei-xing-bian-91cf28-type-variables.md)
 
