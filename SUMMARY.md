@@ -146,4 +146,5 @@
 * [注解\(Annotation\)](zhu-89e328-annotation.md)
 * Google Guava 系列
 * [2.1 - 不可变集合](google-guava-21-bu-ke-bian-ji-he.md)
+* [深入理解Java中的字段与属性的区别](shen-ru-li-jie-java-zhong-de-zi-duan-yu-shu-xing-de-qu-bie.md)
 
