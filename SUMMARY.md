@@ -147,4 +147,5 @@
 * Google Guava 系列
 * [2.1 - 不可变集合](google-guava-21-bu-ke-bian-ji-he.md)
 * [深入理解Java中的字段与属性的区别](shen-ru-li-jie-java-zhong-de-zi-duan-yu-shu-xing-de-qu-bie.md)
+* [Java基础\(17\)：常用类--Sytem类的标准流重定向与常用方法](javaji-784028-17-ff1a-chang-yong-7c7b-sytem-lei-de-biao-zhun-liu-zhong-ding-xiang-yu-chang-yong-fang-fa.md)
 
