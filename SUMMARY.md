@@ -150,4 +150,6 @@
 * [Java基础\(17\)：常用类--Sytem类的标准流重定向与常用方法](javaji-784028-17-ff1a-chang-yong-7c7b-sytem-lei-de-biao-zhun-liu-zhong-ding-xiang-yu-chang-yong-fang-fa.md)
 * [tomcat正常启动后，访问不了localhost:8080](tomcatzheng-chang-qi-dong-hou-ff0c-fang-wen-bu-le-localhost-8080.md)
 * [Java中StackOverflowError与OutOfMemoryError详解](javazhong-stackoverflowerror-yu-outofmemoryerror-xiang-jie.md)
+* [Jackson使用系列](jacksonshi-yong-xi-lie.md)
+  * 处理循环引用导致的无限递归
 
