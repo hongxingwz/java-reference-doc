@@ -151,5 +151,5 @@
 * [tomcat正常启动后，访问不了localhost:8080](tomcatzheng-chang-qi-dong-hou-ff0c-fang-wen-bu-le-localhost-8080.md)
 * [Java中StackOverflowError与OutOfMemoryError详解](javazhong-stackoverflowerror-yu-outofmemoryerror-xiang-jie.md)
 * [Jackson使用系列](jacksonshi-yong-xi-lie.md)
-  * 处理循环引用导致的无限递归
+  * [处理循环引用导致的无限递归](jacksonshi-yong-xi-lie/chu-li-xun-huan-yin-yong-dao-zhi-de-wu-xian-di-gui.md)
 
